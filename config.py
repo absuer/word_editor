@@ -24,3 +24,6 @@ DEFAULT_TOP_K = 4
 # Memory
 MEMORY_MAX_TOKEN_LIMIT = 4000
 MEMORY_KEEP_RECENT = 4
+
+# Vue Word Editor
+VUE_EDITOR_URL = os.getenv("VUE_EDITOR_URL", "http://localhost:5173")

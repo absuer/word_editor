@@ -3,3 +3,7 @@ data/
 __pycache__/
 *.pyc
 .streamlit/
+
+# Vue editor temp files (public/temp/ — keep .gitkeep)
+vue-word-editor/public/temp/*
+!vue-word-editor/public/temp/.gitkeep
