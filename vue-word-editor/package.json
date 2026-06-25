@@ -14,6 +14,7 @@
     "vue": "^3.4.0"
   },
   "devDependencies": {
+    "@onlyoffice/doceditor-types": "^9.4.0",
     "@vitejs/plugin-vue": "^5.0.0",
     "@vue/test-utils": "^2.4.0",
     "jsdom": "^24.0.0",

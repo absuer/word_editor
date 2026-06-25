@@ -1,31 +1,34 @@
 import { ref } from 'vue'
 import type { OnlyOfficeConfig, DocumentType } from '@/types'
+import type { DocEditor } from '@onlyoffice/doceditor-types'
 
 /**
- * OnlyOffice DocEditor 生命周期管理
+ * OnlyOffice DocEditor lifecycle management.
  *
- * 使用全局 DocsAPI.DocEditor 构造函数。
- * 编辑器渲染到指定的 DOM 元素中，内部以 WebAssembly 运行。
- * API 脚本从 OnlyOffice CDN 动态加载。
+ * Uses global DocsAPI.DocEditor constructor.
+ * Editor renders into a specified DOM element, runs internally via WebAssembly.
+ * // TODO: verify correct OnlyOffice Web SDK URL for pure frontend mode
+ * API script is dynamically loaded from OnlyOffice CDN.
  */
 
-// 声明全局 DocsAPI 类型
 declare global {
   interface Window {
     DocsAPI: {
-      DocEditor: new (placeholderId: string, config: any) => any
+      DocEditor: new (placeholderId: string, config: any) => DocEditor
     }
   }
 }
 
+/**
+ * Module-level save callback so onDownloadAs can access it
+ * without relying on closure serialization.
+ */
+let onSaveCallback: ((base64: string) => void) | null = null
+
 export function useOnlyOffice() {
-  const editorInstance = ref<any>(null)
+  const editorInstance = ref<DocEditor | null>(null)
   const isReady = ref(false)
   const isLoading = ref(false)
-
-  function getFileType(format: 'docx' | 'xlsx'): string {
-    return format
-  }
 
   function getDocumentType(format: 'docx' | 'xlsx'): DocumentType {
     return format === 'xlsx' ? 'cell' : 'word'
@@ -33,7 +36,6 @@ export function useOnlyOffice() {
 
   function buildConfig(
     placeholderId: string,
-    base64: string,
     fileName: string,
     format: 'docx' | 'xlsx',
   ): OnlyOfficeConfig {
@@ -54,6 +56,7 @@ export function useOnlyOffice() {
   }
 
   function loadApiScript(): Promise<void> {
+    // TODO: verify correct OnlyOffice Web SDK URL for pure frontend mode
     return new Promise((resolve, reject) => {
       if (typeof window.DocsAPI !== 'undefined') {
         resolve()
@@ -62,7 +65,6 @@ export function useOnlyOffice() {
 
       const scriptId = 'onlyoffice-api-script'
       if (document.getElementById(scriptId)) {
-        // Script is already loading, poll until available
         const interval = setInterval(() => {
           if (typeof window.DocsAPI !== 'undefined') {
             clearInterval(interval)
@@ -90,11 +92,12 @@ export function useOnlyOffice() {
   ): Promise<void> {
     destroy()
     isLoading.value = true
+    onSaveCallback = onSave
 
     try {
       await loadApiScript()
 
-      const config = buildConfig(placeholderId, base64, fileName, format)
+      const config = buildConfig(placeholderId, fileName, format)
       const mimeType = getMimeType(format)
       const dataUrl = `data:${mimeType};base64,${base64}`
 
@@ -119,9 +122,24 @@ export function useOnlyOffice() {
             isReady.value = true
             isLoading.value = false
           },
-          onRequestSave: (event: any) => {
-            if (event.data) {
-              onSave(event.data)
+          onDownloadAs: async (event: any) => {
+            if (event.data?.url && onSaveCallback) {
+              try {
+                const response = await fetch(event.data.url)
+                const blob = await response.blob()
+                const reader = new FileReader()
+                reader.onloadend = () => {
+                  const result = reader.result as string
+                  const commaIndex = result.indexOf(',')
+                  const base64Data = commaIndex >= 0 ? result.substring(commaIndex + 1) : result
+                  if (onSaveCallback) {
+                    onSaveCallback(base64Data)
+                  }
+                }
+                reader.readAsDataURL(blob)
+              } catch (e) {
+                console.error('Failed to download document:', e)
+              }
             }
           },
           onError: (event: any) => {
@@ -139,15 +157,16 @@ export function useOnlyOffice() {
   }
 
   /**
-   * 触发 OnlyOffice 保存。在纯前端模式下通过 requestSave 事件获取内容。
+   * Trigger OnlyOffice save. In pure frontend mode, calls downloadAs()
+   * which triggers the onDownloadAs event to retrieve document data.
    */
   function requestSave(): void {
     if (!editorInstance.value || !isReady.value) return
 
     try {
-      editorInstance.value.document?.save()
+      editorInstance.value.downloadAs()
     } catch {
-      console.warn('save() not available')
+      console.warn('downloadAs() not available')
     }
   }
 
@@ -156,17 +175,19 @@ export function useOnlyOffice() {
       try {
         editorInstance.value.destroyEditor()
       } catch {
-        // 忽略销毁错误
+        // ignore destroy errors
       }
       editorInstance.value = null
     }
     isReady.value = false
     isLoading.value = false
+    onSaveCallback = null
   }
 
   /**
-   * 向编辑器文档中插入文本。
-   * 使用 OnlyOffice connector API 在光标位置插入内容。
+   * Insert text into the editor document at cursor position.
+   * Uses OnlyOffice connector API. Closures do not survive serialization,
+   * so text is passed as a command argument rather than captured via scope.
    */
   function insertText(text: string): void {
     if (!editorInstance.value || !isReady.value) return
@@ -174,16 +195,15 @@ export function useOnlyOffice() {
     try {
       const connector = editorInstance.value.createConnector()
       connector.callCommand(
-        function () {
-          // 此函数在 OnlyOffice 编辑器上下文中执行
+        function (t: string) {
+          // Executes in the OnlyOffice editor context
           const doc = (window as any).Api.GetDocument()
           const paragraph = (window as any).Api.CreateParagraph()
-          paragraph.AddText(text)
+          paragraph.AddText(t)
           doc.InsertContent([paragraph])
-        },
-        function () {
-          // 命令完成回调（可选）
-        },
+        } as any,
+        undefined,
+        [text] as any,
       )
     } catch (e) {
       console.warn('insertText failed:', e)
