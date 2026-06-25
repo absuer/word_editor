@@ -10,3 +10,14 @@ html, body, #app {
   overflow: hidden;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
 }
+
+/* Field panel styles (used outside scoped components) */
+.field-panel {
+  flex: 1;
+  min-width: 200px;
+  max-width: 320px;
+  border-left: 1px solid #e0e0e0;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+}
