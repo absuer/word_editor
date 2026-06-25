@@ -59,7 +59,7 @@ def test_get_editor_html_contains_expected_elements():
     html = get_editor_html(file_bytes, file_name, field_list)
 
     assert '<iframe id="vue-editor"' in html
-    assert './static/vue-editor/index.html' in html
+    assert 'http://localhost:4173' in html
     assert '客户名称' in html
     assert '"type":"init"' in html or '"type": "init"' in html
     assert 'postMessage' in html
@@ -74,7 +74,7 @@ def test_get_editor_html_xlsx_detection():
     html = get_editor_html(file_bytes, file_name, field_list)
 
     assert 'data.xlsx' in html
-    assert './static/vue-editor/index.html' in html
+    assert 'http://localhost:4173' in html
 
 
 def test_get_editor_html_empty_field_list():

@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C5CFC"/>
+    </linearGradient>
+  </defs>
+
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#0A0E27"/>
+  </g>
+
+  <g id="page-header">
+    <rect x="80" y="42" width="4" height="32" rx="2" fill="url(#accentLine)"/>
+    <text x="100" y="68" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#E8E8F0">向量存储 &amp; 智能代理</text>
+    <text x="100" y="90" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8" letter-spacing="2">VECTORSTORE · CHROMADB + AGENT · LANGGRAPH REACT</text>
+  </g>
+
+  <!-- Divider -->
+  <line x1="640" y1="125" x2="640" y2="660" stroke="#2A2E45" stroke-width="1"/>
+
+  <!-- LEFT: VectorStore -->
+  <g id="left-vectorstore">
+    <rect x="80" y="125" width="540" height="535" rx="10" fill="#131837" fill-opacity="0.4" stroke="#2A2E45" stroke-width="1"/>
+
+    <!-- Header -->
+    <use data-icon="phosphor-duotone/database" x="110" y="145" width="32" height="32" fill="#00D4FF"/>
+    <text x="155" y="168" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="24" font-weight="bold" fill="#00D4FF">VectorStoreManager</text>
+    <text x="155" y="190" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#A0A4B8" letter-spacing="1">CHROMADB + HUGGINGFACE EMBEDDINGS</text>
+
+    <!-- Embedding model card -->
+    <rect x="108" y="215" width="484" height="80" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <rect x="108" y="215" width="8" height="80" rx="4" fill="#00D4FF" fill-opacity="0.5"/>
+    <text x="132" y="242" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8E8F0">Embedding 模型</text>
+    <text x="132" y="265" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">paraphrase-multilingual-MiniLM-L12-v2</text>
+    <text x="132" y="284" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8" fill-opacity="0.7">本地 CPU 运行 · normalize_embeddings=True · HF Mirror 回退</text>
+
+    <!-- Chroma DB card -->
+    <rect x="108" y="308" width="484" height="120" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <rect x="108" y="308" width="8" height="120" rx="4" fill="#7C5CFC" fill-opacity="0.5"/>
+    <text x="132" y="335" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8E8F0">ChromaDB 向量库</text>
+    <text x="132" y="358" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">懒加载初始化 (self._store property)</text>
+    <text x="132" y="378" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">去重逻辑 (_get_existing_sources: source + chunk_index)</text>
+    <text x="132" y="398" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">持久化目录: data/chroma_db/</text>
+    <text x="132" y="418" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">close() 释放 Chroma 资源锁 (Windows 必需)</text>
+
+    <!-- Key methods -->
+    <rect x="108" y="442" width="230" height="80" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="130" y="468" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#00D4FF">search()</text>
+    <text x="130" y="488" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">similarity_search(query, k=4)</text>
+    <text x="130" y="508" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8" fill-opacity="0.7">返回最相关文档分块</text>
+
+    <rect x="362" y="442" width="230" height="80" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="384" y="468" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#7C5CFC">get_source_files()</text>
+    <text x="384" y="488" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">collection.get(metadatas)</text>
+    <text x="384" y="508" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8" fill-opacity="0.7">页面刷新恢复文件列表</text>
+
+    <rect x="108" y="536" width="484" height="52" rx="6" fill="#00D4FF" fill-opacity="0.04"/>
+    <text x="215" y="567" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#00D4FF" fill-opacity="0.8">🔒 懒加载 · 去重校验 · 多语言嵌入 · Windows 兼容</text>
+  </g>
+
+  <!-- RIGHT: Agent -->
+  <g id="right-agent">
+    <rect x="640" y="125" width="560" height="535" rx="10" fill="#131837" fill-opacity="0.4" stroke="#2A2E45" stroke-width="1"/>
+
+    <use data-icon="phosphor-duotone/brain" x="670" y="145" width="32" height="32" fill="#7C5CFC"/>
+    <text x="715" y="168" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="24" font-weight="bold" fill="#7C5CFC">AgentManager</text>
+    <text x="715" y="190" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#A0A4B8" letter-spacing="1">LANGGRAPH REACT · DEEPSEEK LLM · DUAL TOOLS</text>
+
+    <!-- LLM card -->
+    <rect x="668" y="215" width="504" height="70" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <rect x="668" y="215" width="8" height="70" rx="4" fill="#7C5CFC" fill-opacity="0.5"/>
+    <text x="692" y="242" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8E8F0">ChatOpenAI → DeepSeek</text>
+    <text x="692" y="262" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">model: deepseek-v4-pro · temperature: 0.3</text>
+    <text x="692" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8" fill-opacity="0.7">OpenAI-compatible: https://api.deepseek.com/v1</text>
+
+    <!-- Tools -->
+    <rect x="668" y="300" width="504" height="130" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="692" y="325" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8E8F0">双工具协同</text>
+
+    <rect x="692" y="338" width="220" height="80" rx="6" fill="#00D4FF" fill-opacity="0.05" stroke="#00D4FF" stroke-width="0.5" stroke-opacity="0.15"/>
+    <use data-icon="phosphor-duotone/magnifying-glass" x="706" y="354" width="20" height="20" fill="#00D4FF"/>
+    <text x="732" y="370" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#00D4FF">retriever</text>
+    <text x="706" y="392" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8">文档语义检索 · 优先调用</text>
+    <text x="706" y="410" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#A0A4B8" fill-opacity="0.7">返回 [来源: 文件名 (页码)]</text>
+
+    <rect x="926" y="338" width="220" height="80" rx="6" fill="#FF6B9D" fill-opacity="0.05" stroke="#FF6B9D" stroke-width="0.5" stroke-opacity="0.15"/>
+    <use data-icon="phosphor-duotone/globe-hemisphere-east" x="940" y="354" width="20" height="20" fill="#FF6B9D"/>
+    <text x="966" y="370" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#FF6B9D">web_search</text>
+    <text x="940" y="392" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8">DuckDuckGo · 智能回退</text>
+    <text x="940" y="410" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#A0A4B8" fill-opacity="0.7">html/lite 双后端 · 重试保护</text>
+
+    <!-- Streaming -->
+    <rect x="668" y="445" width="504" height="70" rx="8" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <rect x="668" y="445" width="8" height="70" rx="4" fill="#00D4FF" fill-opacity="0.5"/>
+    <text x="692" y="472" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#E8E8F0">流式输出 · stream_chat()</text>
+    <text x="692" y="492" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8">values 模式实时 yield · 检索原文收集到 last_retrieved_docs</text>
+    <text x="692" y="510" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8" fill-opacity="0.7">工具调用日志 · 耗时统计 · 回答溯源展示</text>
+
+    <!-- System prompt -->
+    <rect x="668" y="530" width="504" height="55" rx="6" fill="#7C5CFC" fill-opacity="0.04"/>
+    <text x="780" y="552" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#7C5CFC" fill-opacity="0.8">📋 中文 System Prompt: 文档优先 → 网络回退 → 禁止编造 → 注明来源</text>
+    <text x="780" y="572" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#A0A4B8" fill-opacity="0.6">web_search 失败后禁止再次调用 · 告知用户当前不可用</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#2A2E45" fill-opacity="0.5"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#A0A4B8" fill-opacity="0.4">08 / 12</text>
+  </g>
+</svg>

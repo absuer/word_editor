@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C5CFC"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#0A0E27"/>
+  </g>
+
+  <!-- Page header -->
+  <g id="page-header">
+    <rect x="80" y="60" width="4" height="36" rx="2" fill="url(#accentLine)"/>
+    <text x="100" y="90" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#E8E8F0">项目概述</text>
+    <text x="100" y="115" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8" letter-spacing="2">PROJECT OVERVIEW — RAG-POWERED INTELLIGENT CUSTOMER SERVICE</text>
+  </g>
+
+  <!-- Left: Description text block -->
+  <g id="desc-block">
+    <rect x="80" y="160" width="540" height="480" rx="12" fill="#131837" fill-opacity="0.5" stroke="#2A2E45" stroke-width="1"/>
+    <text x="110" y="200" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#E8E8F0">
+      基于<tspan fill="#00D4FF" font-weight="bold"> RAG（Retrieval-Augmented Generation）</tspan>架构的智能客服系统，将用户上传的文档作为知识库，结合大语言模型进行智能问答。
+    </text>
+    <text x="110" y="250" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#E8E8F0">
+      支持 <tspan fill="#7C5CFC" font-weight="bold">7 种</tspan>文件格式（PDF、DOCX、TXT、Markdown、CSV、HTML、图片 OCR），满足企业多样化文档需求。
+    </text>
+    <text x="110" y="300" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#E8E8F0">
+      优先从上传文档中<tspan fill="#00D4FF" font-weight="bold">语义检索</tspan>答案；文档覆盖不足时，自动<tspan fill="#FF6B9D" font-weight="bold">回退至网络搜索</tspan>（DuckDuckGo），确保回答始终有据可依。
+    </text>
+    <text x="110" y="350" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#E8E8F0">
+      内置<tspan fill="#7C5CFC" font-weight="bold">多轮对话记忆</tspan>机制，基于滑动窗口保持上下文连贯，让每一次回答都理解前文。
+    </text>
+  </g>
+
+  <!-- Right: Feature badges -->
+  <g id="feature-badges">
+    <!-- Badge 1 -->
+    <g id="badge-formats">
+      <rect x="660" y="160" width="540" height="80" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+      <circle cx="700" cy="200" r="20" fill="#00D4FF" fill-opacity="0.12"/>
+      <use data-icon="phosphor-duotone/file-doc" x="684" y="184" width="32" height="32" fill="#00D4FF"/>
+      <text x="730" y="196" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">7 种文件格式</text>
+      <text x="730" y="220" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">PDF · DOCX · TXT · MD · CSV · HTML · 图片OCR</text>
+    </g>
+
+    <!-- Badge 2 -->
+    <g id="badge-search">
+      <rect x="660" y="260" width="540" height="80" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+      <circle cx="700" cy="300" r="20" fill="#7C5CFC" fill-opacity="0.12"/>
+      <use data-icon="phosphor-duotone/magnifying-glass" x="684" y="284" width="32" height="32" fill="#7C5CFC"/>
+      <text x="730" y="296" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">双工具智能检索</text>
+      <text x="730" y="320" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">文档优先检索 + 联网搜索智能回退</text>
+    </g>
+
+    <!-- Badge 3 -->
+    <g id="badge-llm">
+      <rect x="660" y="360" width="540" height="80" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+      <circle cx="700" cy="400" r="20" fill="#FF6B9D" fill-opacity="0.12"/>
+      <use data-icon="phosphor-duotone/brain" x="684" y="384" width="32" height="32" fill="#FF6B9D"/>
+      <text x="730" y="396" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">大模型驱动</text>
+      <text x="730" y="420" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">DeepSeek-v4-pro via LangGraph ReAct Agent</text>
+    </g>
+
+    <!-- Badge 4 -->
+    <g id="badge-memory">
+      <rect x="660" y="460" width="540" height="80" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+      <circle cx="700" cy="500" r="20" fill="#00D4FF" fill-opacity="0.12"/>
+      <use data-icon="phosphor-duotone/chats-circle" x="684" y="484" width="32" height="32" fill="#00D4FF"/>
+      <text x="730" y="496" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">多轮对话记忆</text>
+      <text x="730" y="520" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">滑动窗口 BufferWindowMemory 上下文保持</text>
+    </g>
+
+    <!-- Badge 5 -->
+    <g id="badge-trace">
+      <rect x="660" y="560" width="540" height="80" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+      <circle cx="700" cy="600" r="20" fill="#7C5CFC" fill-opacity="0.12"/>
+      <use data-icon="phosphor-duotone/check-circle" x="684" y="584" width="32" height="32" fill="#7C5CFC"/>
+      <text x="730" y="596" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">回答可溯源</text>
+      <text x="730" y="620" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">每个回答附来源文件名与页码，可信可查</text>
+    </g>
+  </g>
+
+  <!-- Footer -->
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#2A2E45" fill-opacity="0.5"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#A0A4B8" fill-opacity="0.4">03 / 12</text>
+  </g>
+</svg>

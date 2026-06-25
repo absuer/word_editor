@@ -1,0 +1,80 @@
+<h2>数据流与通信协议</h2>
+<p class="subtitle">Streamlit ↔ Vue ↔ OnlyOffice 三层通信</p>
+
+<div class="mockup" style="margin-bottom: 2rem;">
+  <div class="mockup-header">完整数据流</div>
+  <div class="mockup-body">
+    <div style="display: flex; flex-direction: column; gap: 10px; padding: 16px; font-size: 13px;">
+
+      <!-- Step 1 -->
+      <div style="background: #e3f2fd; border: 2px solid #1976d2; border-radius: 8px; padding: 10px 16px;">
+        <strong>① 用户上传文件 (Streamlit)</strong>
+        <div style="color: #555; font-size: 12px; margin-top: 2px;">st.file_uploader → 读取 bytes → base64 编码 → 传入 iframe</div>
+      </div>
+      <div style="text-align: center; color: #999; font-size: 18px;">↓</div>
+
+      <!-- Step 2 -->
+      <div style="background: #fff3e0; border: 2px solid #f57c00; border-radius: 8px; padding: 10px 16px;">
+        <strong>② Vue 接收 (useStreamlitBridge)</strong>
+        <div style="color: #555; font-size: 12px; margin-top: 2px;">解析 URL params / postMessage → 提取 base64 + filename + fieldList</div>
+      </div>
+      <div style="text-align: center; color: #999; font-size: 18px;">↓</div>
+
+      <!-- Step 3 -->
+      <div style="background: #e8f5e9; border: 2px solid #4caf50; border-radius: 8px; padding: 10px 16px;">
+        <strong>③ 加载到 OnlyOffice</strong>
+        <div style="color: #555; font-size: 12px; margin-top: 2px;">OnlyOffice API: docEditor.openDocument(base64) → 原生渲染</div>
+      </div>
+      <div style="text-align: center; color: #999; font-size: 18px;">↓</div>
+
+      <!-- Step 4 -->
+      <div style="background: #f3e5f5; border: 2px solid #9c27b0; border-radius: 8px; padding: 10px 16px;">
+        <strong>④ 用户编辑 + 插入字段 (循环)</strong>
+        <div style="color: #555; font-size: 12px; margin-top: 2px;">编辑 → OnlyOffice 内部处理 | 点击字段面板 → postMessage → OnlyOffice API 插入文本</div>
+      </div>
+      <div style="text-align: center; color: #999; font-size: 18px;">↓</div>
+
+      <!-- Step 5 -->
+      <div style="background: #ffebee; border: 2px solid #e53935; border-radius: 8px; padding: 10px 16px;">
+        <strong>⑤ 用户点下载</strong>
+        <div style="color: #555; font-size: 12px; margin-top: 2px;">OnlyOffice API: docEditor.save() → 拿到 base64 → 传回 Streamlit → st.download_button</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>通信接口</h3>
+  <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+    <thead>
+      <tr style="background: #f5f5f5;">
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">方向</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">通道</th>
+        <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">数据</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Streamlit → Vue</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">iframe URL params 或 JS bridge</td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><code>{ fileBase64, fileName, fieldList }</code></td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Vue → OnlyOffice</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">postMessage (OnlyOffice API)</td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><code>openDocument / insertText / save</code></td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">OnlyOffice → Vue</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">postMessage 回调</td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><code>{ status, data (base64) }</code></td>
+      </tr>
+      <tr>
+        <td style="border: 1px solid #ddd; padding: 8px;">Vue → Streamlit</td>
+        <td style="border: 1px solid #ddd; padding: 8px;">JS bridge (回传)</td>
+        <td style="border: 1px solid #ddd; padding: 8px;"><code>{ fileBase64, fileName }</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

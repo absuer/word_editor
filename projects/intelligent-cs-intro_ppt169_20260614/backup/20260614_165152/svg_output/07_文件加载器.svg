@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+  <g id="page-header">
+    <rect x="80" y="42" width="4" height="28" rx="2" fill="#1A73E8"/>
+    <text x="100" y="66" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">文件加载器</text>
+    <text x="100" y="86" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280" letter-spacing="2">FILELOADER — 7 FORMATS · CHINESE-AWARE CHUNKING · RICH METADATA</text>
+  </g>
+
+  <!-- Col 1 -->
+  <g id="c1"><rect x="80" y="110" width="370" height="545" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="110" width="370" height="4" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/file-doc" x="110" y="135" width="28" height="28" fill="#1A73E8"/>
+    <text x="150" y="155" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">7 种格式支持</text>
+
+    <g id="f1"><rect x="108" y="180" width="314" height="62" fill="#F5F6FA"/><text x="128" y="205" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#1A73E8">PDF</text><text x="180" y="205" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">PyPDFLoader · 保留页码</text><text x="128" y="228" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">多页解析与元数据提取</text></g>
+    <g id="f2"><rect x="108" y="248" width="314" height="62" fill="#FFFFFF"/><text x="128" y="273" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#6C3FD4">DOCX</text><text x="184" y="273" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">Docx2txtLoader</text><text x="128" y="296" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">Word 完整文本提取</text></g>
+    <g id="f3"><rect x="108" y="316" width="314" height="62" fill="#F5F6FA"/><text x="128" y="341" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#E8456B">TXT/MD</text><text x="196" y="341" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">TextLoader / UnstructuredMD</text><text x="128" y="364" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">UTF-8 · Markdown 结构保留</text></g>
+    <g id="f4"><rect x="108" y="384" width="314" height="62" fill="#FFFFFF"/><text x="128" y="409" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#1A73E8">CSV</text><text x="176" y="409" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">CSVLoader</text><text x="128" y="432" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">结构化表格数据加载</text></g>
+    <g id="f5"><rect x="108" y="452" width="314" height="62" fill="#F5F6FA"/><text x="128" y="477" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#6C3FD4">HTML</text><text x="184" y="477" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">WebBaseLoader</text><text x="128" y="500" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">file:// 协议网页加载</text></g>
+    <g id="f6"><rect x="108" y="520" width="314" height="62" fill="#FFFFFF"/><text x="128" y="545" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#E8456B">Image</text><text x="196" y="545" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">pytesseract OCR</text><text x="128" y="568" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">chi_sim+eng 中英混合识别</text></g>
+  </g>
+
+  <!-- Col 2 -->
+  <g id="c2"><rect x="462" y="110" width="370" height="545" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="462" y="110" width="370" height="4" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/scissors" x="492" y="135" width="28" height="28" fill="#6C3FD4"/>
+    <text x="532" y="155" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">智能分块策略</text>
+
+    <rect x="490" y="180" width="314" height="110" fill="#F5F6FA"/>
+    <text x="510" y="208" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">RecursiveCharacterTextSplitter</text>
+    <text x="510" y="235" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">chunk_size = 1000</text>
+    <text x="510" y="256" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">chunk_overlap = 150</text>
+    <text x="510" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6C3FD4">中文分隔符: \n\n → \n → 。→ . → 空格</text>
+
+    <rect x="490" y="310" width="314" height="80" fill="#FFFFFF"/>
+    <text x="510" y="338" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">分块流程</text>
+    <text x="510" y="362" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">1. detect_file_type() 自动识别格式</text>
+    <text x="510" y="382" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">2. _load_raw() 调度对应 Loader</text>
+    <text x="510" y="402" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">3. split_documents() 中文感知分块</text>
+
+    <rect x="490" y="410" width="314" height="80" fill="#F5F6FA"/>
+    <text x="510" y="438" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">文件存储</text>
+    <text x="510" y="462" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A73E8">data/uploads/</text>
+    <text x="510" y="482" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">UUID 前缀: {8hex}_{original_name}</text>
+  </g>
+
+  <!-- Col 3 -->
+  <g id="c3"><rect x="844" y="110" width="356" height="545" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="844" y="110" width="356" height="4" fill="#E8456B"/>
+    <use data-icon="phosphor-duotone/info" x="874" y="135" width="28" height="28" fill="#E8456B"/>
+    <text x="914" y="155" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">完整元数据</text>
+
+    <g id="m1"><rect x="872" y="180" width="300" height="56" fill="#F5F6FA"/><text x="892" y="203" font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="bold" fill="#E8456B">source</text><text x="980" y="203" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">原始文件名</text><text x="892" y="224" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">回答溯源依据</text></g>
+    <g id="m2"><rect x="872" y="242" width="300" height="56" fill="#FFFFFF"/><text x="892" y="265" font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="bold" fill="#E8456B">file_type</text><text x="985" y="265" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">格式类型</text><text x="892" y="286" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">pdf / docx / txt / csv / markdown / html / image</text></g>
+    <g id="m3"><rect x="872" y="304" width="300" height="56" fill="#F5F6FA"/><text x="892" y="327" font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="bold" fill="#E8456B">chunk_index</text><text x="1015" y="327" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">分块序号</text><text x="892" y="348" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">文档内部位置定位 + 去重</text></g>
+    <g id="m4"><rect x="872" y="366" width="300" height="56" fill="#FFFFFF"/><text x="892" y="389" font-family="Consolas, 'Courier New', monospace" font-size="13" font-weight="bold" fill="#E8456B">upload_time</text><text x="1020" y="389" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">上传时间</text><text x="892" y="410" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">YYYY-MM-DD HH:MM 格式</text></g>
+
+    <text x="872" y="455" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">每个分块 = 内容 + 4 项元数据</text>
+    <text x="872" y="478" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">source 支持页面刷新恢复文件列表</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">07 / 12</text>
+  </g>
+</svg>

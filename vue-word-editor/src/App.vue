@@ -1,67 +1,55 @@
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
 import TitleBar from '@/components/TitleBar.vue'
 import EditorPanel from '@/components/EditorPanel.vue'
+import FileUploader from '@/components/FileUploader.vue'
 import FieldPanel from '@/components/field/FieldPanel.vue'
-import { useStreamlitBridge } from '@/composables/useStreamlitBridge'
-import type { Field, StreamlitInitMessage } from '@/types'
+import { useEditorState } from '@/composables/useEditorState'
+import type { Field } from '@/types'
 
-const {
-  fileData,
-  fieldList,
-  receiveFromStreamlit,
-  sendToStreamlit,
-} = useStreamlitBridge()
-
+const { fileData, fieldList, openFile, downloadFile } = useEditorState()
 const editorRef = ref<InstanceType<typeof EditorPanel> | null>(null)
 
-// Listen for Streamlit init messages via postMessage
-function handleMessage(event: MessageEvent) {
-  const msg = event.data as StreamlitInitMessage
-  if (msg?.type === 'init') {
-    receiveFromStreamlit(msg)
-  }
+function handleUpload(payload: { fileBase64: string; fileName: string }) {
+  openFile(payload.fileBase64, payload.fileName)
 }
 
-onMounted(() => {
-  window.addEventListener('message', handleMessage)
-})
+function handleNewFile() {
+  fileData.value = null
+}
 
-onBeforeUnmount(() => {
-  window.removeEventListener('message', handleMessage)
-})
-
-// 处理字段插入：点击字段面板 → 插入 {{ 字段名 }} 到编辑器
 function handleInsertField(field: Field) {
-  const text = `{{ ${field.name} }}`
-  editorRef.value?.insertText(text)
+  editorRef.value?.insertText(`{{ ${field.name} }}`)
 }
 
-// 处理下载：触发 OnlyOffice 保存 → onSave 回调 → sendToStreamlit
 function handleDownload() {
   editorRef.value?.requestSave()
 }
 
-// 处理来自 EditorPanel 的保存事件（OnlyOffice onDownloadAs 完成后触发）
 function handleSave(base64: string, fileName: string) {
-  sendToStreamlit(base64, fileName)
+  downloadFile(base64, fileName)
 }
 </script>
 
 <template>
   <div class="editor-layout">
     <div class="editor-main">
-      <TitleBar
-        :file-name="fileData?.fileName || '未打开文件'"
-        @download="handleDownload"
-      />
-      <EditorPanel
-        ref="editorRef"
-        :file-data="fileData"
-        @save="handleSave"
-      />
+      <template v-if="fileData">
+        <TitleBar
+          :file-name="fileData.fileName"
+          @download="handleDownload"
+          @new-file="handleNewFile"
+        />
+        <EditorPanel
+          ref="editorRef"
+          :file-data="fileData"
+          @save="handleSave"
+        />
+      </template>
+      <FileUploader v-else @upload="handleUpload" />
     </div>
     <FieldPanel
+      v-if="fileData"
       :fields="fieldList"
       @insert="handleInsertField"
     />

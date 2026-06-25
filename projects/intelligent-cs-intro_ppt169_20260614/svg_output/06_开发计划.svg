@@ -1,0 +1,159 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+
+  <g id="page-header">
+    <rect x="80" y="28" width="4" height="24" rx="2" fill="#1A73E8"/>
+    <text x="100" y="48" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="32" font-weight="bold" fill="#1A1D2E">开发计划</text>
+    <text x="100" y="65" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280" letter-spacing="2">DEVELOPMENT ROADMAP — FROM Q&amp;A DEMO TO INTELLIGENT CS PLATFORM</text>
+  </g>
+
+  <!-- ═══ PHASE 1 — Current ═══ -->
+  <g id="phase1">
+    <rect x="80" y="88" width="1120" height="138" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="88" width="220" height="138" fill="#1A73E8"/>
+    <text x="190" y="145" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="48" font-weight="bold" fill="#FFFFFF">P1</text>
+    <text x="190" y="172" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" fill-opacity="0.85">当前阶段</text>
+    <text x="190" y="198" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#FFFFFF" fill-opacity="0.6">CURRENT</text>
+
+    <rect x="310" y="102" width="200" height="30" fill="#1A73E8" fill-opacity="0.08"/>
+    <text x="410" y="122" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A73E8">基础问答 Demo</text>
+
+    <g id="p1-items">
+      <rect x="310" y="142" width="260" height="36" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/file-doc" x="322" y="152" width="16" height="16" fill="#1A73E8"/>
+      <text x="346" y="165" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">多格式文档上传与解析 (7 种格式)</text>
+
+      <rect x="580" y="142" width="260" height="36" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/database" x="592" y="152" width="16" height="16" fill="#1A73E8"/>
+      <text x="616" y="165" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">ChromaDB 向量存储与语义检索</text>
+
+      <rect x="310" y="184" width="260" height="36" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/brain" x="322" y="194" width="16" height="16" fill="#1A73E8"/>
+      <text x="346" y="207" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">LangGraph ReAct Agent 编排</text>
+
+      <rect x="580" y="184" width="260" height="36" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/globe-hemisphere-east" x="592" y="194" width="16" height="16" fill="#1A73E8"/>
+      <text x="616" y="207" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">DuckDuckGo 网络搜索回退</text>
+
+      <rect x="310" y="226" width="530" height="36" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/chats-circle" x="322" y="236" width="16" height="16" fill="#1A73E8"/>
+      <text x="346" y="249" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">多轮对话记忆 (BufferWindow k=4) · 流式输出 · 答案溯源</text>
+
+      <rect x="850" y="142" width="330" height="120" fill="#1A73E8" fill-opacity="0.04"/>
+      <use data-icon="phosphor-duotone/check-circle" x="870" y="162" width="20" height="20" fill="#00C853"/>
+      <text x="898" y="178" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" font-weight="bold" fill="#00C853">已完成 COMPLETED</text>
+      <text x="870" y="202" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">通用文档问答能力已就绪</text>
+      <text x="870" y="222" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">可部署为内部知识库助手</text>
+      <text x="870" y="248" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">需进一步适配客服专有场景</text>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <g id="arrow1">
+    <line x1="190" y1="226" x2="190" y2="248" stroke="#1A73E8" stroke-width="2" stroke-dasharray="4,3"/>
+    <polygon points="184,246 190,256 196,246" fill="#1A73E8"/>
+  </g>
+
+  <!-- ═══ PHASE 2 — 客服场景适配 ═══ -->
+  <g id="phase2">
+    <rect x="80" y="256" width="1120" height="236" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="256" width="220" height="236" fill="#6C3FD4"/>
+    <text x="190" y="313" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="48" font-weight="bold" fill="#FFFFFF">P2</text>
+    <text x="190" y="340" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" fill-opacity="0.85">客服场景适配</text>
+    <text x="190" y="366" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#FFFFFF" fill-opacity="0.6">CS ADAPTATION</text>
+
+    <rect x="310" y="270" width="200" height="30" fill="#6C3FD4" fill-opacity="0.08"/>
+    <text x="410" y="290" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#6C3FD4">客服专有能力建设</text>
+
+    <!-- Task 1: 8D -->
+    <g id="p2-t1">
+      <rect x="310" y="310" width="340" height="90" fill="#F5F6FA"/>
+      <rect x="310" y="310" width="4" height="90" fill="#6C3FD4"/>
+      <use data-icon="phosphor-duotone/file-doc" x="326" y="328" width="20" height="20" fill="#6C3FD4"/>
+      <text x="354" y="344" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">8D 投诉报告处理</text>
+      <text x="326" y="368" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">解析客户 8D 报告结构 (D0-D8)</text>
+      <text x="326" y="386" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">自动识别问题描述 · 围堵措施 · 根因 · 永久对策</text>
+      <text x="326" y="404" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#6B7280">支持不同客户 8D 模板的自适应解析</text>
+    </g>
+
+    <!-- Task 2: Fishbone -->
+    <g id="p2-t2">
+      <rect x="670" y="310" width="340" height="90" fill="#FFFFFF"/>
+      <rect x="670" y="310" width="4" height="90" fill="#6C3FD4"/>
+      <use data-icon="phosphor-duotone/tree-structure" x="686" y="328" width="20" height="20" fill="#6C3FD4"/>
+      <text x="714" y="344" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">鱼骨图分析</text>
+      <text x="686" y="368" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">Ishikawa 因果分析辅助生成</text>
+      <text x="686" y="386" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">6M 维度自动分类 (人机料法环测)</text>
+      <text x="686" y="404" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#6B7280">从历史案例中推荐可能根因分支</text>
+    </g>
+
+    <!-- Task 3: 5Why -->
+    <g id="p2-t3">
+      <rect x="310" y="410" width="340" height="70" fill="#FFFFFF"/>
+      <rect x="310" y="410" width="4" height="70" fill="#6C3FD4"/>
+      <use data-icon="phosphor-duotone/question" x="326" y="428" width="20" height="20" fill="#6C3FD4"/>
+      <text x="354" y="444" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">5-Why 分析引导</text>
+      <text x="326" y="464" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">逐步追问式根因挖掘 · 避免停留在表象</text>
+      <text x="326" y="480" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#6B7280">Agent 自动检测逻辑断裂 · 提示补充证据</text>
+    </g>
+
+    <!-- Task 4: CA/PA -->
+    <g id="p2-t4">
+      <rect x="670" y="410" width="340" height="70" fill="#F5F6FA"/>
+      <rect x="670" y="410" width="4" height="70" fill="#6C3FD4"/>
+      <use data-icon="phosphor-duotone/arrows-clockwise" x="686" y="428" width="20" height="20" fill="#6C3FD4"/>
+      <text x="714" y="444" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">纠正 vs 纠正措施</text>
+      <text x="686" y="464" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">区分 Correction / Corrective Action / Preventive Action</text>
+      <text x="686" y="480" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#6B7280">智能推荐 CA 方案 · 效果跟踪闭环</text>
+    </g>
+  </g>
+
+  <!-- Arrow -->
+  <g id="arrow2">
+    <line x1="190" y1="492" x2="190" y2="514" stroke="#6C3FD4" stroke-width="2" stroke-dasharray="4,3"/>
+    <polygon points="184,512 190,522 196,512" fill="#6C3FD4"/>
+  </g>
+
+  <!-- ═══ PHASE 3 — 智能升级 ═══ -->
+  <g id="phase3">
+    <rect x="80" y="522" width="1120" height="120" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="522" width="220" height="120" fill="#E8456B"/>
+    <text x="190" y="575" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="48" font-weight="bold" fill="#FFFFFF">P3</text>
+    <text x="190" y="600" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" font-weight="bold" fill="#FFFFFF" fill-opacity="0.85">智能升级</text>
+    <text x="190" y="620" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#FFFFFF" fill-opacity="0.6">AI ENHANCEMENT</text>
+
+    <rect x="310" y="536" width="200" height="26" fill="#E8456B" fill-opacity="0.06"/>
+    <text x="410" y="554" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" font-weight="bold" fill="#E8456B">智能决策与自动化</text>
+
+    <g id="p3-items">
+      <rect x="310" y="572" width="230" height="36" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/lightbulb" x="322" y="582" width="16" height="16" fill="#E8456B"/>
+      <text x="346" y="595" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">历史案例库构建与相似匹配</text>
+
+      <rect x="550" y="572" width="230" height="36" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/chart-bar" x="562" y="582" width="16" height="16" fill="#E8456B"/>
+      <text x="586" y="595" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">客诉趋势分析与预警</text>
+
+      <rect x="790" y="572" width="230" height="36" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/note-pencil" x="802" y="582" width="16" height="16" fill="#E8456B"/>
+      <text x="826" y="595" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">8D 报告自动生成</text>
+
+      <rect x="310" y="614" width="230" height="36" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/link" x="322" y="624" width="16" height="16" fill="#E8456B"/>
+      <text x="346" y="637" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">ERP/CRM/PLM 系统集成</text>
+
+      <rect x="550" y="614" width="230" height="36" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/rocket" x="562" y="624" width="16" height="16" fill="#E8456B"/>
+      <text x="586" y="637" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">闭环跟踪与效果验证</text>
+
+      <rect x="790" y="614" width="230" height="36" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/users-three" x="802" y="624" width="16" height="16" fill="#E8456B"/>
+      <text x="826" y="637" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">多角色协作工作流</text>
+    </g>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="678" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="698" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">06 / 12</text>
+  </g>
+</svg>

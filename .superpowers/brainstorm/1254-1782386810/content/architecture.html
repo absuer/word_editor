@@ -1,0 +1,76 @@
+<h2>整体架构</h2>
+<p class="subtitle">Vue 编辑器嵌入 Streamlit 的完整数据流</p>
+
+<div class="mockup" style="margin-bottom: 2rem;">
+  <div class="mockup-header">架构总览</div>
+  <div class="mockup-body">
+    <div style="display: flex; flex-direction: column; gap: 16px; padding: 16px; font-size: 13px;">
+
+      <!-- Streamlit Layer -->
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <div style="background: #e3f2fd; border: 2px solid #1976d2; border-radius: 8px; padding: 12px 16px; flex: 1; text-align: center;">
+          <strong>🐍 Streamlit (app.py)</strong>
+          <div style="color: #666; margin-top: 4px;">文件上传 · Session 管理 · 下载触发</div>
+        </div>
+        <div style="font-size: 20px; color: #666;">↔</div>
+        <div style="background: #e8f5e9; border: 2px solid #388e3c; border-radius: 8px; padding: 12px 16px; flex: 1; text-align: center;">
+          <strong>📦 文件桥接层</strong>
+          <div style="color: #666; margin-top: 4px;">base64 编码/解码 · JS ↔ Python 通信</div>
+        </div>
+      </div>
+
+      <div style="text-align: center; font-size: 20px; color: #999;">↓</div>
+
+      <!-- Vue Editor Layer -->
+      <div style="background: #fff3e0; border: 2px solid #f57c00; border-radius: 8px; padding: 16px;">
+        <strong>🟢 Vue 3 编辑器 (独立前端项目)</strong>
+        <div style="display: flex; gap: 16px; margin-top: 12px;">
+          <div style="flex: 1; border: 1px solid #ddd; border-radius: 6px; padding: 10px; text-align: center;">
+            <strong>📝 WordEditor.vue</strong>
+            <div style="color: #666; font-size: 12px;">TipTap 编辑器</div>
+            <div style="color: #999; font-size: 11px;">加载 · 编辑 · 格式化 · 下载</div>
+          </div>
+          <div style="flex: 1; border: 1px solid #ddd; border-radius: 6px; padding: 10px; text-align: center;">
+            <strong>📊 ExcelEditor.vue</strong>
+            <div style="color: #666; font-size: 12px;">Handsontable</div>
+            <div style="color: #999; font-size: 11px;">加载 · 编辑 · 下载</div>
+          </div>
+        </div>
+        <div style="display: flex; gap: 16px; margin-top: 10px;">
+          <div style="flex: 1; border: 1px solid #ddd; border-radius: 6px; padding: 10px; text-align: center;">
+            <strong>📥 DocxIO.ts</strong>
+            <div style="color: #666; font-size: 12px;">mammoth.js → docx 读取</div>
+            <div style="color: #666; font-size: 12px;">docx.js → docx 生成</div>
+          </div>
+          <div style="flex: 1; border: 1px solid #ddd; border-radius: 6px; padding: 10px; text-align: center;">
+            <strong>📤 FileBridge.js</strong>
+            <div style="color: #666; font-size: 12px;">接收 base64 → 解析 → 编辑 → 回传 base64</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>关键设计点</h3>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+    <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px;">
+      <strong>📁 文件流转</strong>
+      <p style="margin: 4px 0 0; font-size: 13px; color: #555;">Streamlit 读文件 → base64 → JS bridge → Vue 解析编辑 → base64 → Streamlit 下载</p>
+    </div>
+    <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px;">
+      <strong>🔄 双格式路由</strong>
+      <p style="margin: 4px 0 0; font-size: 13px; color: #555;">按 .docx / .xlsx 扩展名自动切换 Word / Excel 编辑器</p>
+    </div>
+    <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px;">
+      <strong>📦 部署方式</strong>
+      <p style="margin: 4px 0 0; font-size: 13px; color: #555;">Vue build 为静态文件，Streamlit serve 为静态资源，通过 iframe 嵌入</p>
+    </div>
+    <div style="border: 1px solid #e0e0e0; border-radius: 6px; padding: 12px;">
+      <strong>🧩 协议友好</strong>
+      <p style="margin: 4px 0 0; font-size: 13px; color: #555;">TipTap (MIT) + Handsontable (free) + mammoth.js (BSD) + docx.js (MIT)</p>
+    </div>
+  </div>
+</div>

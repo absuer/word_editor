@@ -1,0 +1,20 @@
+{
+  "rendering": "digital-dashboard",
+  "palette": "tech-neon",
+  "images": [
+    {
+      "id": "cover_bg",
+      "filename": "cover_bg.png",
+      "prompt": "Futuristic AI data center abstract background. Flowing cyan and purple light streams across a deep navy field. Subtle hexagonal grid pattern at low opacity in the background. Calm central upper zone with minimal detail reserved for title text overlay. Luminous particles scattered at the edges creating depth. Digital dashboard aesthetic with polished surfaces and subtle glow effects. Dark atmospheric mood with technological precision. No text, no letters, no numbers, no logos.",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "id": "architecture_bg",
+      "filename": "architecture_bg.png",
+      "prompt": "Abstract tech network mesh on deep navy background. Subtle connected nodes with faint cyan glow lines forming a distributed network pattern. Very low contrast and minimal detail so text and diagrams can be overlaid clearly. Dark gradient at all four edges fading to pure dark navy canvas. Digital dashboard aesthetic with understated technological texture. Designed as a backdrop for an architecture diagram overlay. No text, no letters, no numbers, no logos.",
+      "width": 1280,
+      "height": 720
+    }
+  ]
+}

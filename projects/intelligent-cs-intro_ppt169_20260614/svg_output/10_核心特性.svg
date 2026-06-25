@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+  <g id="page-header">
+    <rect x="80" y="36" width="4" height="28" rx="2" fill="#1A73E8"/>
+    <text x="100" y="60" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">适用场景</text>
+    <text x="100" y="80" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280" letter-spacing="2">USE CASES — WHERE THIS SYSTEM SHINES</text>
+  </g>
+
+  <!-- 2x3 grid -->
+  <g id="sc1"><rect x="80" y="108" width="370" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="108" width="370" height="4" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/brain" x="250" y="140" width="32" height="32" fill="#1A73E8"/>
+    <text x="265" y="195" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">企业知识库</text>
+    <text x="265" y="218" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">INTERNAL KB</text>
+    <text x="265" y="255" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">上传内部文档即建即用</text>
+    <text x="265" y="280" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">员工 FAQ 自助查询</text>
+    <text x="265" y="305" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">无需手工整理 FAQ 库</text>
+  </g>
+  <g id="sc2"><rect x="462" y="108" width="370" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="462" y="108" width="370" height="4" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/book-open" x="632" y="140" width="32" height="32" fill="#6C3FD4"/>
+    <text x="647" y="195" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">产品文档问答</text>
+    <text x="647" y="218" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">PRODUCT DOCS</text>
+    <text x="647" y="255" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">产品手册/说明书上传</text>
+    <text x="647" y="280" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">用户自助查询功能说明</text>
+    <text x="647" y="305" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">降低客服人工压力</text>
+  </g>
+  <g id="sc3"><rect x="844" y="108" width="356" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="844" y="108" width="356" height="4" fill="#E8456B"/>
+    <use data-icon="phosphor-duotone/desktop" x="1012" y="140" width="32" height="32" fill="#E8456B"/>
+    <text x="1022" y="195" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">技术支持助手</text>
+    <text x="1022" y="218" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#E8456B" letter-spacing="1">TECH SUPPORT</text>
+    <text x="1022" y="255" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">技术文档/日志/错误码</text>
+    <text x="1022" y="280" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">快速定位解决方案</text>
+    <text x="1022" y="305" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">支持联网搜索补充</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g id="sc4"><rect x="80" y="378" width="370" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="378" width="370" height="4" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/stack" x="250" y="410" width="32" height="32" fill="#1A73E8"/>
+    <text x="265" y="465" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">合同/法规检索</text>
+    <text x="265" y="488" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">LEGAL &amp; CONTRACTS</text>
+    <text x="265" y="525" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">上传合同/法规 PDF</text>
+    <text x="265" y="550" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">快速查找条款/合规要求</text>
+    <text x="265" y="575" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">标注来源页码可溯源</text>
+  </g>
+  <g id="sc5"><rect x="462" y="378" width="370" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="462" y="378" width="370" height="4" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/chats-circle" x="632" y="410" width="32" height="32" fill="#6C3FD4"/>
+    <text x="647" y="465" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">私有化部署</text>
+    <text x="647" y="488" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">ON-PREMISE</text>
+    <text x="647" y="525" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">数据不出企业内网</text>
+    <text x="647" y="550" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">纯本地 CPU 嵌入 + ChromaDB</text>
+    <text x="647" y="575" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">仅 LLM 调用需外网 API</text>
+  </g>
+  <g id="sc6"><rect x="844" y="378" width="356" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="844" y="378" width="356" height="4" fill="#E8456B"/>
+    <use data-icon="phosphor-duotone/rocket" x="1012" y="410" width="32" height="32" fill="#E8456B"/>
+    <text x="1022" y="465" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">快速原型验证</text>
+    <text x="1022" y="488" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#E8456B" letter-spacing="1">RAPID PROTOTYPE</text>
+    <text x="1022" y="525" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">最小可行 RAG 系统</text>
+    <text x="1022" y="550" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">分钟级搭建验证概念</text>
+    <text x="1022" y="575" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">再决定是否上生产平台</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">10 / 12</text>
+  </g>
+</svg>

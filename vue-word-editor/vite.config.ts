@@ -9,9 +9,9 @@ export default defineConfig({
       '@': resolve(__dirname, 'src'),
     },
   },
-  base: '/static/vue-editor/',
+  base: '/',
   build: {
-    outDir: '../static/vue-editor',
+    outDir: 'dist',
     assetsDir: 'assets',
     emptyOutDir: true,
   },

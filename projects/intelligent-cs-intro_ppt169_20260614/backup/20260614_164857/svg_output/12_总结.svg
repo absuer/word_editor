@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+
+  <!-- Left accent bar -->
+  <g id="decor-accent">
+    <rect x="0" y="0" width="6" height="720" fill="#1A73E8"/>
+    <rect x="0" y="280" width="6" height="140" fill="#6C3FD4"/>
+  </g>
+
+  <!-- Title -->
+  <g id="main-title">
+    <text x="80" y="160" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="60" font-weight="bold" fill="#1A1D2E">总结</text>
+    <rect x="80" y="180" width="60" height="3" fill="#1A73E8"/>
+  </g>
+
+  <!-- Takeaways -->
+  <g id="takeaways">
+    <rect x="80" y="220" width="1120" height="350" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+
+    <g id="t1"><rect x="108" y="240" width="1064" height="70" fill="#F5F6FA"/>
+      <text x="130" y="272" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#1A73E8">01</text>
+      <rect x="170" y="250" width="2" height="40" fill="#1A73E8"/>
+      <text x="192" y="272" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">Streamlit Web 界面，开箱即用 — 一条命令启动</text>
+      <text x="192" y="296" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">streamlit run app.py</text>
+    </g>
+
+    <g id="t2"><rect x="108" y="318" width="1064" height="70" fill="#FFFFFF"/>
+      <text x="130" y="350" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#6C3FD4">02</text>
+      <rect x="170" y="328" width="2" height="40" fill="#6C3FD4"/>
+      <text x="192" y="350" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">7 种格式 × 中文优化分块 × 本地嵌入模型</text>
+      <text x="192" y="374" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">多格式文档一键上传 · 中文感知分割 · CPU 友好</text>
+    </g>
+
+    <g id="t3"><rect x="108" y="396" width="1064" height="70" fill="#F5F6FA"/>
+      <text x="130" y="428" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#E8456B">03</text>
+      <rect x="170" y="406" width="2" height="40" fill="#E8456B"/>
+      <text x="192" y="428" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">ReAct Agent 双工具编排，文档优先 + 智能回退</text>
+      <text x="192" y="452" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">retriever → web_search · 失败保护 · 禁止编造</text>
+    </g>
+
+    <g id="t4"><rect x="108" y="474" width="1064" height="62" fill="#FFFFFF"/>
+      <text x="130" y="506" font-family="Consolas, 'Courier New', monospace" font-size="18" font-weight="bold" fill="#1A73E8">04</text>
+      <rect x="170" y="484" width="2" height="40" fill="#1A73E8"/>
+      <text x="192" y="506" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">全流程可溯源，适合企业知识库问答场景</text>
+      <text x="192" y="528" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">轻量高效 · 即装即用 · 中文优化</text>
+    </g>
+  </g>
+
+  <!-- Bottom -->
+  <g id="closing">
+    <text x="640" y="630" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="24" fill="#1A1D2E">智能客服系统 = RAG + LangGraph Agent + ChromaDB</text>
+    <text x="640" y="666" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" fill="#6B7280">感谢观看 · 欢迎提问</text>
+  </g>
+
+  <g id="page-footer">
+    <text x="1200" y="680" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">12 / 12</text>
+  </g>
+</svg>

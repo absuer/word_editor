@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+  <g id="page-header">
+    <rect x="80" y="36" width="4" height="28" rx="2" fill="#1A73E8"/>
+    <text x="100" y="60" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">记忆管理</text>
+    <text x="100" y="80" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280" letter-spacing="2">MEMORYMANAGER — CONVERSATION BUFFER WINDOW MEMORY</text>
+  </g>
+
+  <!-- 2x2 Grid -->
+  <g id="c1"><rect x="80" y="105" width="550" height="270" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="105" width="4" height="270" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/lightbulb" x="110" y="132" width="26" height="26" fill="#1A73E8"/>
+    <text x="148" y="152" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">滑动窗口记忆</text>
+    <text x="148" y="170" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">CONVERSATION BUFFER WINDOW</text>
+
+    <rect x="108" y="190" width="494" height="72" fill="#F5F6FA"/>
+    <text x="128" y="215" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#1A1D2E">只保留最近 k 轮对话（默认 k=4），超出自动滑出</text>
+    <text x="128" y="240" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">避免上下文过长导致推理速度下降和 Token 浪费</text>
+
+    <rect x="108" y="274" width="494" height="62" fill="#FFFFFF"/>
+    <text x="128" y="300" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#1A1D2E">return_messages=True — 以消息列表形式返回对话历史</text>
+    <text x="128" y="322" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">memory_key="history" — 统一注入 Agent prompt</text>
+  </g>
+
+  <g id="c2"><rect x="648" y="105" width="552" height="270" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="648" y="105" width="4" height="270" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/code" x="678" y="132" width="26" height="26" fill="#6C3FD4"/>
+    <text x="716" y="152" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">实现细节</text>
+    <text x="716" y="170" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">IMPLEMENTATION</text>
+
+    <rect x="676" y="190" width="496" height="80" fill="#F5F6FA"/>
+    <text x="696" y="214" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#6C3FD4">class MemoryManager:</text>
+    <text x="696" y="236" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A1D2E">  def __init__(self, k=MEMORY_KEEP_RECENT)</text>
+    <text x="696" y="256" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A1D2E">  def save_context(inputs, outputs)</text>
+    <text x="696" y="276" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A1D2E">  def load_memory_variables(inputs)</text>
+  </g>
+
+  <g id="c3"><rect x="80" y="395" width="550" height="260" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="395" width="4" height="260" fill="#E8456B"/>
+    <use data-icon="phosphor-duotone/chats-circle" x="110" y="422" width="26" height="26" fill="#E8456B"/>
+    <text x="148" y="442" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">对话流转</text>
+    <text x="148" y="460" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#E8456B" letter-spacing="1">CONVERSATION LIFECYCLE</text>
+
+    <rect x="108" y="480" width="155" height="56" fill="#F5F6FA"/>
+    <text x="185" y="506" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#1A73E8">1. 用户提问</text>
+    <text x="185" y="524" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">chat_input</text>
+    <text x="273" y="512" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#1A73E8">→</text>
+    <rect x="290" y="480" width="155" height="56" fill="#FFFFFF"/>
+    <text x="367" y="506" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#6C3FD4">2. 加载历史</text>
+    <text x="367" y="524" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">load_memory</text>
+    <text x="455" y="512" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#6C3FD4">→</text>
+    <rect x="472" y="480" width="130" height="56" fill="#F5F6FA"/>
+    <text x="537" y="506" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#E8456B">3. 注入 Prompt</text>
+    <text x="537" y="524" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">stream_chat</text>
+
+    <rect x="108" y="548" width="494" height="55" fill="#F5F6FA"/>
+    <text x="128" y="570" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#00C853">4. save_context()</text>
+    <text x="310" y="570" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">保存本轮对话 → 维持 session_state 状态</text>
+    <text x="128" y="592" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">页面刷新时从 st.session_state 恢复 MemoryManager 实例</text>
+  </g>
+
+  <g id="c4"><rect x="648" y="395" width="552" height="260" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="648" y="395" width="4" height="260" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/gear" x="678" y="422" width="26" height="26" fill="#1A73E8"/>
+    <text x="716" y="442" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">配置参数</text>
+    <text x="716" y="460" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">CONFIGURATION</text>
+
+    <rect x="676" y="480" width="496" height="140" fill="#F5F6FA"/>
+    <text x="696" y="508" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A73E8" font-weight="bold">MEMORY_KEEP_RECENT = 4</text>
+    <text x="696" y="530" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">保留最近 4 轮（8 条消息）</text>
+
+    <text x="696" y="556" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#6C3FD4" font-weight="bold">MEMORY_MAX_TOKEN_LIMIT = 4000</text>
+    <text x="696" y="578" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">对话历史 Token 上限控制</text>
+
+    <text x="696" y="604" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#E8456B" font-weight="bold">session_state 持久化</text>
+    <text x="696" y="626" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">Streamlit 页面刷新后状态保持</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">09 / 12</text>
+  </g>
+</svg>

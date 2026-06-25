@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/>
+  </g>
+
+  <!-- Left accent bar -->
+  <g id="decor-accent">
+    <rect x="0" y="0" width="6" height="720" fill="#1A73E8"/>
+    <rect x="0" y="300" width="6" height="120" fill="#6C3FD4"/>
+  </g>
+
+  <!-- Top-right geometric accent -->
+  <g id="decor-geo">
+    <rect x="1050" y="80" width="180" height="180" fill="none" stroke="#1A73E8" stroke-width="1.5" stroke-opacity="0.2"/>
+    <rect x="1080" y="110" width="120" height="120" fill="none" stroke="#6C3FD4" stroke-width="1" stroke-opacity="0.15"/>
+    <rect x="1110" y="140" width="60" height="60" fill="#1A73E8" fill-opacity="0.06"/>
+  </g>
+
+  <!-- Bottom-left decorative line -->
+  <g id="decor-line">
+    <rect x="80" y="620" width="200" height="2" fill="#1A73E8"/>
+    <rect x="80" y="628" width="100" height="2" fill="#6C3FD4"/>
+  </g>
+
+  <!-- Main Title -->
+  <g id="cover-title">
+    <text x="80" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="64" font-weight="bold" fill="#1A1D2E">智能客服系统</text>
+  </g>
+
+  <!-- Subtitle -->
+  <g id="cover-subtitle">
+    <text x="80" y="340" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="28" fill="#6B7280">基于 RAG 的智能问答平台</text>
+    <text x="80" y="380" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#6B7280">技术架构解析</text>
+  </g>
+
+  <!-- Divider -->
+  <g id="cover-divider">
+    <rect x="80" y="420" width="80" height="3" fill="#1A73E8"/>
+    <rect x="168" y="420" width="40" height="3" fill="#6C3FD4"/>
+  </g>
+
+  <!-- Bottom info -->
+  <g id="cover-footer">
+    <text x="80" y="660" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#6B7280">Streamlit + LangChain/LangGraph + ChromaDB + DeepSeek</text>
+    <text x="1200" y="680" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="14" fill="#6B7280">2026.06</text>
+  </g>
+</svg>

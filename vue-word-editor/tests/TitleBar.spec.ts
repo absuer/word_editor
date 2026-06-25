@@ -32,4 +32,13 @@ describe('TitleBar', () => {
     expect(wrapper.emitted('download')).toBeTruthy()
     expect(wrapper.emitted('download')![0]).toEqual([])
   })
+
+  it('emits new-file event when new file button is clicked', async () => {
+    const wrapper = mount(TitleBar, {
+      props: { fileName: 'test.docx' }
+    })
+    await wrapper.find('[data-test="new-file-btn"]').trigger('click')
+    expect(wrapper.emitted('new-file')).toBeTruthy()
+    expect(wrapper.emitted('new-file')![0]).toEqual([])
+  })
 })

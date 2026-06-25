@@ -7,6 +7,7 @@ const props = defineProps<{
 
 const emit = defineEmits<{
   download: []
+  'new-file': []
 }>()
 
 const fileIcon = computed(() => {
@@ -25,6 +26,13 @@ const fileTypeLabel = computed(() => {
     <span class="title-bar__icon">{{ fileIcon }}</span>
     <span class="title-bar__name">{{ fileName }}</span>
     <span class="title-bar__type">{{ fileTypeLabel }}</span>
+    <button
+      class="title-bar__new"
+      data-test="new-file-btn"
+      @click="emit('new-file')"
+    >
+      新建
+    </button>
     <button
       class="title-bar__download"
       data-test="download-btn"
@@ -61,6 +69,20 @@ const fileTypeLabel = computed(() => {
   font-size: 11px;
   opacity: 0.5;
   margin-right: 12px;
+}
+
+.title-bar__new {
+  background: transparent;
+  color: #ccc;
+  border: 1px solid #666;
+  border-radius: 3px;
+  padding: 3px 14px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.title-bar__new:hover {
+  background: #444;
 }
 
 .title-bar__download {

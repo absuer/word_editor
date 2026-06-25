@@ -1,0 +1,64 @@
+<h2>方案调整：Vue + OnlyOffice Web SDK</h2>
+<p class="subtitle">100% 文档还原，80/20 分栏 + 字段面板</p>
+
+<div class="mockup" style="margin-bottom: 2rem;">
+  <div class="mockup-header">新架构</div>
+  <div class="mockup-body">
+    <div style="display: flex; flex-direction: column; gap: 14px; padding: 16px; font-size: 13px;">
+
+      <div style="background: #e3f2fd; border: 2px solid #1976d2; border-radius: 8px; padding: 12px 16px; text-align: center;">
+        <strong>🐍 Streamlit</strong>
+        <span style="color: #666;">上传 · Session · 下载</span>
+      </div>
+      <div style="text-align: center; color: #999;">↓ base64 文件内容 + 字段列表</div>
+      <div style="background: #fff3e0; border: 2px solid #f57c00; border-radius: 8px; padding: 12px 16px; text-align: center;">
+        <strong>🟢 Vue 3 壳</strong>
+        <span style="color: #666;">80/20 分栏布局 · 文件桥接 · 字段管理</span>
+      </div>
+      <div style="text-align: center; color: #999;">↓</div>
+      <div style="display: flex; gap: 12px;">
+        <div style="flex: 4; background: #e8f5e9; border: 2px solid #4caf50; border-radius: 8px; padding: 12px; text-align: center;">
+          <strong>📝 OnlyOffice iframe (80%)</strong>
+          <div style="color: #555; font-size: 12px; margin-top: 4px;">原生 Word/Excel 渲染引擎</div>
+          <div style="color: #888; font-size: 11px;">文档加载 · 编辑 · 导出</div>
+        </div>
+        <div style="flex: 1; background: #fafafa; border: 2px solid #9e9e9e; border-radius: 8px; padding: 12px; text-align: center;">
+          <strong>📋 字段面板 (20%)</strong>
+          <div style="color: #555; font-size: 12px; margin-top: 4px;">Vue 原生组件</div>
+          <div style="color: #888; font-size: 11px;">搜索 · 字段列表</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>关键变化</h3>
+  <div class="pros-cons">
+    <div class="pros"><h4>✅ 优势</h4>
+      <ul>
+        <li>Word/Excel 100% 还原，与桌面 Office 完全一致</li>
+        <li>ranuts/document 已验证可行，有参考实现</li>
+        <li>编辑器功能远超 A 级，后续扩展空间大</li>
+      </ul>
+    </div>
+    <div class="cons"><h4>⚠️ 代价</h4>
+      <ul>
+        <li>体积约 30MB（WebAssembly），首屏加载慢</li>
+        <li>AGPL-3.0 协议（需开源衍生代码）</li>
+        <li>OnlyOffice 编辑器在 iframe 内，<strong>字段面板无法直接控制编辑器</strong></li>
+        <li>插入字段需通过 OnlyOffice API postMessage 通信</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>⚠️ 重要：字段插入的可行性</h3>
+  <p>OnlyOffice 编辑器运行在独立的 iframe 中。要实现"点击字段 → 插入到光标位置"：</p>
+  <ul>
+    <li><strong>必须</strong>通过 OnlyOffice JS API → <code>postMessage</code> 通信</li>
+    <li>可以调用 <code>docEditor.insertText()</code> 或操作 <code>document</code> 插入文本</li>
+    <li>ranuts/document 也是纯前端模式，同样的通信机制，<strong>技术上可行</strong></li>
+  </ul>
+</div>

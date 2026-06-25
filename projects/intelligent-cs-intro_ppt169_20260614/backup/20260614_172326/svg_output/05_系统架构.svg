@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+
+  <g id="page-header">
+    <rect x="80" y="30" width="4" height="26" rx="2" fill="#1A73E8"/>
+    <text x="100" y="52" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">系统架构总览</text>
+    <text x="100" y="70" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280" letter-spacing="2">THREE-TIER ARCHITECTURE — PRESENTATION · AGENT · STORAGE</text>
+  </g>
+
+  <!-- LAYER 1 — 展示层 (y: 95–265, height: 170) -->
+  <g id="l1">
+    <!-- Layer bg -->
+    <rect x="80" y="95" width="1120" height="170" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <!-- Left accent strip -->
+    <rect x="80" y="95" width="5" height="170" fill="#1A73E8"/>
+    <!-- Layer label bar -->
+    <rect x="85" y="95" width="1115" height="34" fill="#F5F6FA"/>
+    <text x="110" y="117" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A73E8">展示层 PRESENTATION</text>
+    <text x="290" y="117" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">Streamlit Web UI — 用户交互界面</text>
+
+    <!-- Row 1: two modules -->
+    <rect x="110" y="145" width="420" height="52" fill="#F5F6FA"/>
+    <use data-icon="phosphor-duotone/desktop" x="124" y="162" width="22" height="22" fill="#1A73E8"/>
+    <text x="156" y="176" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">Streamlit Web 界面</text>
+    <text x="320" y="176" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">文件上传 · 聊天界面 · 侧边栏设置</text>
+    <text x="156" y="192" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#1A73E8">st.file_uploader + st.chat_message + st.sidebar</text>
+
+    <rect x="550" y="145" width="420" height="52" fill="#F5F6FA"/>
+    <use data-icon="phosphor-duotone/users-three" x="564" y="162" width="22" height="22" fill="#1A73E8"/>
+    <text x="596" y="176" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">会话状态管理</text>
+    <text x="760" y="176" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">session_state 持久化 · 文件去重</text>
+    <text x="596" y="192" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="11" fill="#1A73E8">uploaded_files[name_size] 去重 key</text>
+
+    <!-- Row 2 -->
+    <rect x="110" y="207" width="420" height="46" fill="#FFFFFF"/>
+    <use data-icon="phosphor-duotone/gear" x="124" y="224" width="22" height="22" fill="#1A73E8"/>
+    <text x="156" y="237" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">设置面板</text>
+    <text x="280" y="237" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">Top-K 滑块 · 模型信息 · 清空按钮</text>
+
+    <rect x="550" y="207" width="420" height="46" fill="#FFFFFF"/>
+    <use data-icon="phosphor-duotone/chat-circle-dots" x="564" y="224" width="22" height="22" fill="#1A73E8"/>
+    <text x="596" y="237" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">聊天展示</text>
+    <text x="720" y="237" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">流式渲染 · 检索来源展开</text>
+  </g>
+
+  <!-- Arrow L1→L2 -->
+  <line x1="82" y1="265" x2="82" y2="283" stroke="#1A73E8" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- LAYER 2 — 代理层 (y: 283–468, height: 185) -->
+  <g id="l2">
+    <rect x="80" y="283" width="1120" height="185" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="283" width="5" height="185" fill="#6C3FD4"/>
+    <rect x="85" y="283" width="1115" height="34" fill="#F5F6FA"/>
+    <text x="110" y="305" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#6C3FD4">代理层 AGENT</text>
+    <text x="270" y="305" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">LangGraph ReAct Agent — 工具编排与推理</text>
+
+    <!-- Central: Agent core -->
+    <rect x="110" y="333" width="300" height="60" fill="#F5F6FA"/>
+    <use data-icon="phosphor-duotone/brain" x="124" y="350" width="22" height="22" fill="#6C3FD4"/>
+    <text x="156" y="364" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">ReAct Agent 核心</text>
+    <text x="156" y="386" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">create_react_agent · ChatOpenAI · stream_mode="values"</text>
+
+    <!-- Tool 1: retriever -->
+    <rect x="430" y="333" width="360" height="60" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <use data-icon="phosphor-duotone/magnifying-glass" x="444" y="350" width="22" height="22" fill="#1A73E8"/>
+    <text x="476" y="364" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#1A73E8">retriever</text>
+    <text x="596" y="364" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">文档语义检索</text>
+    <text x="476" y="386" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">优先调用 · k=4 · 返回[来源:文件名(页码)]</text>
+
+    <!-- Tool 2: web_search -->
+    <rect x="810" y="333" width="360" height="60" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <use data-icon="phosphor-duotone/globe-hemisphere-east" x="824" y="350" width="22" height="22" fill="#E8456B"/>
+    <text x="856" y="364" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#E8456B">web_search</text>
+    <text x="986" y="364" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">联网回退</text>
+    <text x="856" y="386" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">DuckDuckGo html/lite · 失败后禁止重试</text>
+
+    <!-- Second row: Memory + LLM -->
+    <rect x="110" y="405" width="420" height="50" fill="#FFFFFF"/>
+    <use data-icon="phosphor-duotone/chats-circle" x="124" y="422" width="22" height="22" fill="#6C3FD4"/>
+    <text x="156" y="436" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">对话记忆</text>
+    <text x="280" y="436" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">ConversationBufferWindowMemory · k=4</text>
+
+    <rect x="550" y="405" width="420" height="50" fill="#FFFFFF"/>
+    <use data-icon="phosphor-duotone/cpu" x="564" y="422" width="22" height="22" fill="#6C3FD4"/>
+    <text x="596" y="436" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#1A1D2E">LLM 模型</text>
+    <text x="720" y="436" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">DeepSeek-v4-pro · temperature=0.3 · /v1 endpoint</text>
+  </g>
+
+  <!-- Arrow L2→L3 -->
+  <line x1="82" y1="468" x2="82" y2="486" stroke="#6C3FD4" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- LAYER 3 — 存储层 (y: 486–658, height: 172) -->
+  <g id="l3">
+    <rect x="80" y="486" width="1120" height="172" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="486" width="5" height="172" fill="#E8456B"/>
+    <rect x="85" y="486" width="1115" height="34" fill="#F5F6FA"/>
+    <text x="110" y="508" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#E8456B">存储层 STORAGE</text>
+    <text x="260" y="508" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">ChromaDB + HuggingFace Embeddings + FileLoader</text>
+
+    <!-- Three storage modules -->
+    <rect x="110" y="536" width="340" height="110" fill="#F5F6FA"/>
+    <use data-icon="phosphor-duotone/database" x="130" y="556" width="24" height="24" fill="#E8456B"/>
+    <text x="164" y="574" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">ChromaDB 向量库</text>
+    <text x="130" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">懒加载初始化 · 相似度检索</text>
+    <text x="130" y="618" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">去重: source+chunk_index</text>
+    <text x="130" y="638" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#E8456B">data/chroma_db/</text>
+
+    <rect x="470" y="536" width="340" height="110" fill="#FFFFFF"/>
+    <use data-icon="phosphor-duotone/cpu" x="490" y="556" width="24" height="24" fill="#E8456B"/>
+    <text x="524" y="574" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">HuggingFace Embedding</text>
+    <text x="490" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">paraphrase-multilingual-MiniLM-L12-v2</text>
+    <text x="490" y="618" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">CPU 本地 · normalize_embeddings</text>
+    <text x="490" y="638" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#E8456B">HF Mirror 回退</text>
+
+    <rect x="830" y="536" width="340" height="110" fill="#F5F6FA"/>
+    <use data-icon="phosphor-duotone/file-doc" x="850" y="556" width="24" height="24" fill="#E8456B"/>
+    <text x="884" y="574" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">FileLoader 文件系统</text>
+    <text x="850" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">7 种格式自动检测 · UUID 安全命名</text>
+    <text x="850" y="618" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">中文感知 RecursiveCharacterTextSplitter</text>
+    <text x="850" y="638" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#E8456B">data/uploads/</text>
+  </g>
+
+  <!-- Footer -->
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="698" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">05 / 12</text>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/>
+  </g>
+  <g id="page-header">
+    <rect x="80" y="48" width="4" height="32" rx="2" fill="#1A73E8"/>
+    <text x="100" y="74" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">项目概述</text>
+    <text x="100" y="96" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280" letter-spacing="2">RAG-POWERED INTELLIGENT CUSTOMER SERVICE SYSTEM</text>
+  </g>
+
+  <!-- Left: Description -->
+  <g id="desc-block">
+    <rect x="80" y="130" width="550" height="530" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="130" width="4" height="530" fill="#1A73E8"/>
+    <text x="110" y="175" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#1A1D2E">
+      基于<tspan fill="#1A73E8" font-weight="bold"> RAG（检索增强生成）</tspan>架构，将用户上传的文档作为知识库，结合大语言模型进行智能问答。
+    </text>
+    <text x="110" y="230" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#1A1D2E">
+      支持 <tspan fill="#6C3FD4" font-weight="bold">7 种</tspan>文件格式：PDF、DOCX、TXT、Markdown、CSV、HTML、图片 OCR，满足企业多样化文档需求。
+    </text>
+    <text x="110" y="285" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#1A1D2E">
+      优先从上传文档中<tspan fill="#1A73E8" font-weight="bold">语义检索</tspan>答案；文档覆盖不足时，自动<tspan fill="#E8456B" font-weight="bold">回退至网络搜索</tspan> (DuckDuckGo)。
+    </text>
+    <text x="110" y="340" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" fill="#1A1D2E">
+      内置<tspan fill="#6C3FD4" font-weight="bold">多轮对话记忆</tspan>机制，基于滑动窗口保持上下文连贯，让每一次回答都理解前文。
+    </text>
+  </g>
+
+  <!-- Right: Feature rows -->
+  <g id="features">
+    <rect x="660" y="130" width="540" height="530" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="660" y="130" width="540" height="48" fill="#F5F6FA"/>
+    <text x="930" y="160" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="16" font-weight="bold" fill="#1A1D2E">核心能力</text>
+
+    <g id="fr1">
+      <rect x="682" y="196" width="496" height="40" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/file-doc" x="696" y="202" width="24" height="24" fill="#1A73E8"/>
+      <text x="732" y="220" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="17" font-weight="bold" fill="#1A1D2E">7 种文件格式</text>
+      <text x="880" y="220" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">PDF · DOCX · TXT · MD · CSV · HTML · 图片OCR</text>
+    </g>
+    <g id="fr2">
+      <rect x="682" y="252" width="496" height="40" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/magnifying-glass" x="696" y="258" width="24" height="24" fill="#6C3FD4"/>
+      <text x="732" y="276" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="17" font-weight="bold" fill="#1A1D2E">双工具智能检索</text>
+      <text x="920" y="276" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">文档优先 + 联网回退</text>
+    </g>
+    <g id="fr3">
+      <rect x="682" y="308" width="496" height="40" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/brain" x="696" y="314" width="24" height="24" fill="#E8456B"/>
+      <text x="732" y="332" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="17" font-weight="bold" fill="#1A1D2E">大模型驱动</text>
+      <text x="880" y="332" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">DeepSeek-v4-pro · LangGraph ReAct</text>
+    </g>
+    <g id="fr4">
+      <rect x="682" y="364" width="496" height="40" fill="#FFFFFF"/>
+      <use data-icon="phosphor-duotone/chats-circle" x="696" y="370" width="24" height="24" fill="#1A73E8"/>
+      <text x="732" y="388" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="17" font-weight="bold" fill="#1A1D2E">多轮对话记忆</text>
+      <text x="920" y="388" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">BufferWindow · 上下文连贯</text>
+    </g>
+    <g id="fr5">
+      <rect x="682" y="420" width="496" height="40" fill="#F5F6FA"/>
+      <use data-icon="phosphor-duotone/check-circle" x="696" y="426" width="24" height="24" fill="#6C3FD4"/>
+      <text x="732" y="444" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="17" font-weight="bold" fill="#1A1D2E">回答可溯源</text>
+      <text x="880" y="444" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">来源文件名 + 页码标注</text>
+    </g>
+
+    <!-- Config summary -->
+    <rect x="682" y="490" width="496" height="100" fill="#F5F6FA"/>
+    <text x="710" y="520" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#1A1D2E" font-weight="bold">技术规格</text>
+    <text x="710" y="545" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">Chunk Size: 1000 | Chunk Overlap: 150 | Top-K: 4</text>
+    <text x="710" y="570" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">Embed: MiniLM-L12-v2 · CPU | Memory: k=4 buffer window</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">03 / 12</text>
+  </g>
+</svg>

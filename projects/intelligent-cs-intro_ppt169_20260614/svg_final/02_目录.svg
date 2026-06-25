@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#EDEFF4" />
+  </g>
+
+  <g id="page-header">
+    <path fill="#1A73E8" d="M82,60 H82 A2,2 0 0 1 84,62 V90 A2,2 0 0 1 82,92 H82 A2,2 0 0 1 80,90 V62 A2,2 0 0 1 82,60 Z" />
+    <text x="100" y="85" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">目录</text>
+    <text x="100" y="108" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280" letter-spacing="3">AGENDA</text>
+  </g>
+
+  <g id="agenda-items">
+    
+    <g id="col1">
+      <rect x="80" y="155" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="110" y="192" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#1A73E8">01</text>
+      <rect x="160" y="172" width="2" height="28" fill="#1A73E8" />
+      <text x="180" y="192" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">项目概述</text>
+      <text x="180" y="212" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">系统定位与核心能力介绍</text>
+
+      <rect x="80" y="227" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="110" y="264" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#6C3FD4">02</text>
+      <rect x="160" y="244" width="2" height="28" fill="#6C3FD4" />
+      <text x="180" y="264" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">技术栈一览</text>
+      <text x="180" y="284" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">核心技术组件与选型</text>
+
+      <rect x="80" y="299" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="110" y="336" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#E8456B">03</text>
+      <rect x="160" y="316" width="2" height="28" fill="#E8456B" />
+      <text x="180" y="336" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">系统架构总览</text>
+      <text x="180" y="356" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">模块关系与三层架构设计</text>
+
+      <rect x="80" y="371" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="110" y="408" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#1A73E8">04</text>
+      <rect x="160" y="388" width="2" height="28" fill="#1A73E8" />
+      <text x="180" y="408" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">数据处理流程</text>
+      <text x="180" y="428" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">从上传到检索的完整链路</text>
+    </g>
+
+    
+    <g id="col2">
+      <rect x="660" y="155" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="690" y="192" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#6C3FD4">05</text>
+      <rect x="740" y="172" width="2" height="28" fill="#6C3FD4" />
+      <text x="760" y="192" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">核心模块解析</text>
+      <text x="760" y="212" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">FileLoader / VectorStore / Agent / Memory</text>
+
+      <rect x="660" y="227" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="690" y="264" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#1A73E8">06</text>
+      <rect x="740" y="244" width="2" height="28" fill="#1A73E8" />
+      <text x="760" y="264" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">核心特性与亮点</text>
+      <text x="760" y="284" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">六大核心优势总结</text>
+
+      <rect x="660" y="299" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="690" y="336" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#E8456B">07</text>
+      <rect x="740" y="316" width="2" height="28" fill="#E8456B" />
+      <text x="760" y="336" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">运行与部署</text>
+      <text x="760" y="356" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">命令、配置与环境变量</text>
+
+      <rect x="660" y="371" width="540" height="64" rx="0" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+      <text x="690" y="408" font-family="Consolas, 'Courier New', monospace" font-size="28" font-weight="bold" fill="#6C3FD4">08</text>
+      <rect x="740" y="388" width="2" height="28" fill="#6C3FD4" />
+      <text x="760" y="408" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" fill="#1A1D2E">总结</text>
+      <text x="760" y="428" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">回顾与后续展望</text>
+    </g>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4" />
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">02 / 12</text>
+  </g>
+</svg>

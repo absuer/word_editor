@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C5CFC"/>
+    </linearGradient>
+    <marker id="arrowHead" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L8,4 L0,8 Z" fill="#00D4FF"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#0A0E27"/>
+  </g>
+
+  <!-- Page header -->
+  <g id="page-header">
+    <rect x="80" y="42" width="4" height="32" rx="2" fill="url(#accentLine)"/>
+    <text x="100" y="68" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#E8E8F0">数据处理流程</text>
+    <text x="100" y="90" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8" letter-spacing="2">DATA PIPELINE — FROM FILE UPLOAD TO INTELLIGENT ANSWER</text>
+  </g>
+
+  <!-- Pipeline stages -->
+  <!-- Stage 1: Upload -->
+  <g id="stage-upload">
+    <rect x="80" y="145" width="250" height="340" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <path d="M 80 153 A 8 8 0 0 1 88 145 L 322 145 A 8 8 0 0 1 330 153 L 330 195 L 80 195 Z" fill="#00D4FF" fill-opacity="0.18"/>
+    <text x="205" y="176" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="bold" fill="#00D4FF">01</text>
+
+    <text x="205" y="225" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">文件上传</text>
+    <rect x="100" y="238" width="210" height="28" rx="4" fill="#00D4FF" fill-opacity="0.06"/>
+    <text x="205" y="258" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#00D4FF" font-weight="bold">多源输入 · 去重校验</text>
+
+    <circle cx="120" cy="286" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="132" y="290" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">用户通过 Web UI 上传</text>
+    <circle cx="120" cy="314" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="132" y="318" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">支持拖拽 + 点击选择</text>
+    <circle cx="120" cy="342" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="132" y="346" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">去重 key: name + size</text>
+    <circle cx="120" cy="370" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="132" y="374" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">UUID 安全命名保存</text>
+
+    <line x1="100" y1="412" x2="310" y2="412" stroke="#2A2E45" stroke-width="1" stroke-dasharray="4,4"/>
+    <rect x="100" y="424" width="210" height="48" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="205" y="446" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#A0A4B8" letter-spacing="1">STAGE OUTPUT</text>
+    <text x="205" y="464" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#00D4FF">data/uploads/*</text>
+  </g>
+
+  <!-- Arrow 1→2 -->
+  <line x1="335" y1="310" x2="370" y2="310" stroke="#00D4FF" stroke-width="2" stroke-opacity="0.4" marker-end="url(#arrowHead)"/>
+
+  <!-- Stage 2: Parse -->
+  <g id="stage-parse">
+    <rect x="380" y="145" width="250" height="340" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <path d="M 380 153 A 8 8 0 0 1 388 145 L 622 145 A 8 8 0 0 1 630 153 L 630 195 L 380 195 Z" fill="#7C5CFC" fill-opacity="0.18"/>
+    <text x="505" y="176" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="bold" fill="#7C5CFC">02</text>
+
+    <text x="505" y="225" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">解析分块</text>
+    <rect x="400" y="238" width="210" height="28" rx="4" fill="#7C5CFC" fill-opacity="0.06"/>
+    <text x="505" y="258" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#7C5CFC" font-weight="bold">格式检测 · 中文分割</text>
+
+    <circle cx="420" cy="286" r="3" fill="#7C5CFC" fill-opacity="0.6"/>
+    <text x="432" y="290" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">自动识别 7 种格式</text>
+    <circle cx="420" cy="314" r="3" fill="#7C5CFC" fill-opacity="0.6"/>
+    <text x="432" y="318" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">PDF / DOCX / TXT / MD</text>
+    <circle cx="420" cy="342" r="3" fill="#7C5CFC" fill-opacity="0.6"/>
+    <text x="432" y="346" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">CSV / HTML / 图片OCR</text>
+    <circle cx="420" cy="370" r="3" fill="#7C5CFC" fill-opacity="0.6"/>
+    <text x="432" y="374" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">chunk=1000, overlap=150</text>
+
+    <line x1="400" y1="412" x2="610" y2="412" stroke="#2A2E45" stroke-width="1" stroke-dasharray="4,4"/>
+    <rect x="400" y="424" width="210" height="48" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="505" y="446" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#A0A4B8" letter-spacing="1">STAGE OUTPUT</text>
+    <text x="505" y="464" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#7C5CFC">Document Chunks</text>
+  </g>
+
+  <!-- Arrow 2→3 -->
+  <line x1="635" y1="310" x2="670" y2="310" stroke="#7C5CFC" stroke-width="2" stroke-opacity="0.4" marker-end="url(#arrowHead)"/>
+
+  <!-- Stage 3: Vectorize -->
+  <g id="stage-vectorize">
+    <rect x="680" y="145" width="250" height="340" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <path d="M 680 153 A 8 8 0 0 1 688 145 L 922 145 A 8 8 0 0 1 930 153 L 930 195 L 680 195 Z" fill="#FF6B9D" fill-opacity="0.15"/>
+    <text x="805" y="176" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="bold" fill="#FF6B9D">03</text>
+
+    <text x="805" y="225" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">向量化存储</text>
+    <rect x="700" y="238" width="210" height="28" rx="4" fill="#FF6B9D" fill-opacity="0.06"/>
+    <text x="805" y="258" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#FF6B9D" font-weight="bold">嵌入生成 · 持久化</text>
+
+    <circle cx="720" cy="286" r="3" fill="#FF6B9D" fill-opacity="0.6"/>
+    <text x="732" y="290" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">HuggingFace Embeddings</text>
+    <circle cx="720" cy="314" r="3" fill="#FF6B9D" fill-opacity="0.6"/>
+    <text x="732" y="318" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">MiniLM-L12-v2 本地 CPU</text>
+    <circle cx="720" cy="342" r="3" fill="#FF6B9D" fill-opacity="0.6"/>
+    <text x="732" y="346" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">ChromaDB 向量入库</text>
+    <circle cx="720" cy="370" r="3" fill="#FF6B9D" fill-opacity="0.6"/>
+    <text x="732" y="374" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">data/chroma_db/ 持久化</text>
+
+    <line x1="700" y1="412" x2="910" y2="412" stroke="#2A2E45" stroke-width="1" stroke-dasharray="4,4"/>
+    <rect x="700" y="424" width="210" height="48" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="805" y="446" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#A0A4B8" letter-spacing="1">STAGE OUTPUT</text>
+    <text x="805" y="464" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#FF6B9D">Vector Index</text>
+  </g>
+
+  <!-- Arrow 3→4 -->
+  <line x1="935" y1="310" x2="970" y2="310" stroke="#FF6B9D" stroke-width="2" stroke-opacity="0.4" marker-end="url(#arrowHead)"/>
+
+  <!-- Stage 4: Retrieve & Generate -->
+  <g id="stage-retrieve">
+    <rect x="980" y="145" width="230" height="340" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <path d="M 980 153 A 8 8 0 0 1 988 145 L 1202 145 A 8 8 0 0 1 1210 153 L 1210 195 L 980 195 Z" fill="#00D4FF" fill-opacity="0.15"/>
+    <text x="1095" y="176" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="16" font-weight="bold" fill="#00D4FF">04</text>
+
+    <text x="1095" y="225" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">检索生成</text>
+    <rect x="1000" y="238" width="190" height="28" rx="4" fill="#00D4FF" fill-opacity="0.06"/>
+    <text x="1095" y="258" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#00D4FF" font-weight="bold">双工具 · 流式输出</text>
+
+    <circle cx="1000" cy="286" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="1012" y="290" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">Retriever 文档搜索</text>
+    <circle cx="1000" cy="314" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="1012" y="318" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">Web Search 智能回退</text>
+    <circle cx="1000" cy="342" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="1012" y="346" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">LLM 流式生成回答</text>
+    <circle cx="1000" cy="370" r="3" fill="#00D4FF" fill-opacity="0.6"/>
+    <text x="1012" y="374" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">来源标注 + 记忆存储</text>
+
+    <line x1="1000" y1="412" x2="1190" y2="412" stroke="#2A2E45" stroke-width="1" stroke-dasharray="4,4"/>
+    <rect x="1000" y="424" width="190" height="48" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="1095" y="446" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#A0A4B8" letter-spacing="1">STAGE OUTPUT</text>
+    <text x="1095" y="464" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" font-weight="bold" fill="#00D4FF">智能回答</text>
+  </g>
+
+  <!-- Bottom flow summary -->
+  <g id="bottom-flow">
+    <rect x="80" y="510" width="1130" height="66" rx="8" fill="#131837" fill-opacity="0.4" stroke="#2A2E45" stroke-width="1"/>
+    <text x="150" y="548" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8">数据流方向</text>
+    <rect x="250" y="534" width="140" height="28" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="320" y="553" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#00D4FF" font-weight="bold">原始文件</text>
+    <text x="400" y="553" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#00D4FF" fill-opacity="0.3">→</text>
+    <rect x="430" y="534" width="140" height="28" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="500" y="553" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#7C5CFC" font-weight="bold">分块文档</text>
+    <text x="580" y="553" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#7C5CFC" fill-opacity="0.3">→</text>
+    <rect x="610" y="534" width="140" height="28" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="680" y="553" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#FF6B9D" font-weight="bold">向量索引</text>
+    <text x="760" y="553" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#FF6B9D" fill-opacity="0.3">→</text>
+    <rect x="790" y="534" width="140" height="28" rx="6" fill="#1A1F3D" stroke="#2A2E45" stroke-width="1"/>
+    <text x="860" y="553" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#00D4FF" font-weight="bold">智能回答</text>
+  </g>
+
+  <!-- Footer -->
+  <g id="page-footer">
+    <rect x="80" y="685" width="1130" height="1" fill="#2A2E45" fill-opacity="0.5"/>
+    <text x="1210" y="705" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#A0A4B8" fill-opacity="0.4">06 / 12</text>
+  </g>
+</svg>

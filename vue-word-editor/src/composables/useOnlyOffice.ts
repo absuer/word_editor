@@ -29,6 +29,7 @@ export function useOnlyOffice() {
   const editorInstance = ref<DocEditor | null>(null)
   const isReady = ref(false)
   const isLoading = ref(false)
+  const error = ref('')
 
   function getDocumentType(format: 'docx' | 'xlsx'): DocumentType {
     return format === 'xlsx' ? 'cell' : 'word'
@@ -76,7 +77,7 @@ export function useOnlyOffice() {
 
       const script = document.createElement('script')
       script.id = scriptId
-      script.src = 'https://onlyoffice.github.io/sdkjs-plugins/v1/editors.js'
+      script.src = 'http://localhost:8080/web-apps/apps/api/documents/api.js'
       script.onload = () => resolve()
       script.onerror = () => reject(new Error('Failed to load OnlyOffice API script'))
       document.head.appendChild(script)
@@ -151,6 +152,7 @@ export function useOnlyOffice() {
 
       editorInstance.value = new window.DocsAPI.DocEditor(placeholderId, fullConfig)
     } catch (e) {
+      error.value = 'OnlyOffice 编辑器加载失败。请确认 Docker 已启动且 OnlyOffice Document Server 正在运行（docker run -d -p 8080:80 onlyoffice/documentserver）。'
       console.error('Failed to initialize OnlyOffice editor:', e)
       isLoading.value = false
     }

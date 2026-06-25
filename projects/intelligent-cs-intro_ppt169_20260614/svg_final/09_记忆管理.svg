@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4" /></g>
+  <g id="page-header">
+    <path fill="#1A73E8" d="M82,36 H82 A2,2 0 0 1 84,38 V62 A2,2 0 0 1 82,64 H82 A2,2 0 0 1 80,62 V38 A2,2 0 0 1 82,36 Z" />
+    <text x="100" y="60" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">记忆管理</text>
+    <text x="100" y="80" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280" letter-spacing="2">MEMORYMANAGER — CONVERSATION BUFFER WINDOW MEMORY</text>
+  </g>
+
+  
+  <g id="c1"><rect x="80" y="105" width="550" height="270" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+    <rect x="80" y="105" width="4" height="270" fill="#1A73E8" />
+    
+  <g transform="translate(110.0, 132.0) scale(0.1015625)" fill="#1A73E8">
+    <path d="M208,104a79.86,79.86,0,0,1-30.59,62.92A24.29,24.29,0,0,0,168,186v6a8,8,0,0,1-8,8H96a8,8,0,0,1-8-8v-6a24.11,24.11,0,0,0-9.3-19A79.87,79.87,0,0,1,48,104.45C47.76,61.09,82.72,25,126.07,24A80,80,0,0,1,208,104Z" opacity="0.2" />
+    <path d="M176,232a8,8,0,0,1-8,8H88a8,8,0,0,1,0-16h80A8,8,0,0,1,176,232Zm40-128a87.55,87.55,0,0,1-33.64,69.21A16.24,16.24,0,0,0,176,186v6a16,16,0,0,1-16,16H96a16,16,0,0,1-16-16v-6a16,16,0,0,0-6.23-12.66A87.59,87.59,0,0,1,40,104.49C39.74,56.83,78.26,17.14,125.88,16A88,88,0,0,1,216,104Zm-16,0a72,72,0,0,0-73.74-72c-39,.92-70.47,33.39-70.26,72.39a71.65,71.65,0,0,0,27.64,56.3A32,32,0,0,1,96,186v6h64v-6a32.15,32.15,0,0,1,12.47-25.35A71.65,71.65,0,0,0,200,104Zm-16.11-9.34a57.6,57.6,0,0,0-46.56-46.55,8,8,0,0,0-2.66,15.78c16.57,2.79,30.63,16.85,33.44,33.45A8,8,0,0,0,176,104a9,9,0,0,0,1.35-.11A8,8,0,0,0,183.89,94.66Z" />
+  </g>
+    <text x="148" y="152" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">滑动窗口记忆</text>
+    <text x="148" y="170" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">CONVERSATION BUFFER WINDOW</text>
+
+    <rect x="108" y="190" width="494" height="72" fill="#F5F6FA" />
+    <text x="128" y="215" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#1A1D2E">只保留最近 k 轮对话（默认 k=4），超出自动滑出</text>
+    <text x="128" y="240" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">避免上下文过长导致推理速度下降和 Token 浪费</text>
+
+    <rect x="108" y="274" width="494" height="62" fill="#FFFFFF" />
+    <text x="128" y="300" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#1A1D2E">return_messages=True — 以消息列表形式返回对话历史</text>
+    <text x="128" y="322" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">memory_key="history" — 统一注入 Agent prompt</text>
+  </g>
+
+  <g id="c2"><rect x="648" y="105" width="552" height="270" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+    <rect x="648" y="105" width="4" height="270" fill="#6C3FD4" />
+    
+  <g transform="translate(678.0, 132.0) scale(0.1015625)" fill="#6C3FD4">
+    <path d="M240,128l-48,40H64L16,128,64,88H192Z" opacity="0.2" />
+    <path d="M69.12,94.15,28.5,128l40.62,33.85a8,8,0,1,1-10.24,12.29l-48-40a8,8,0,0,1,0-12.29l48-40a8,8,0,0,1,10.24,12.3Zm176,27.7-48-40a8,8,0,1,0-10.24,12.3L227.5,128l-40.62,33.85a8,8,0,1,0,10.24,12.29l48-40a8,8,0,0,0,0-12.29ZM162.73,32.48a8,8,0,0,0-10.25,4.79l-64,176a8,8,0,0,0,4.79,10.26A8.14,8.14,0,0,0,96,224a8,8,0,0,0,7.52-5.27l64-176A8,8,0,0,0,162.73,32.48Z" />
+  </g>
+    <text x="716" y="152" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">实现细节</text>
+    <text x="716" y="170" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">IMPLEMENTATION</text>
+
+    <rect x="676" y="190" width="496" height="80" fill="#F5F6FA" />
+    <text x="696" y="214" font-family="Consolas, 'Courier New', monospace" font-size="14" font-weight="bold" fill="#6C3FD4">class MemoryManager:</text>
+    <text x="696" y="236" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A1D2E">  def __init__(self, k=MEMORY_KEEP_RECENT)</text>
+    <text x="696" y="256" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A1D2E">  def save_context(inputs, outputs)</text>
+    <text x="696" y="276" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A1D2E">  def load_memory_variables(inputs)</text>
+  </g>
+
+  <g id="c3"><rect x="80" y="395" width="550" height="260" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+    <rect x="80" y="395" width="4" height="260" fill="#E8456B" />
+    
+  <g transform="translate(110.0, 422.0) scale(0.1015625)" fill="#E8456B">
+    <path d="M231.76,216.34a6,6,0,0,1-7.42,7.42l-29.87-8.53A72.05,72.05,0,0,1,92.06,175.89h0c1.3.07,2.61.11,3.93.11a72,72,0,0,0,67.93-95.88h0a72,72,0,0,1,59.29,106.36Z" opacity="0.2" />
+    <path d="M231.79,187.33A80,80,0,0,0,169.57,72.59,80,80,0,1,0,24.21,139.33l-7.66,26.82a14,14,0,0,0,17.3,17.3l26.82-7.66a80.15,80.15,0,0,0,25.75,7.63,80,80,0,0,0,108.91,40.37l26.82,7.66a14,14,0,0,0,17.3-17.3ZM61.53,159.23a8.22,8.22,0,0,0-2.2.3l-26.41,7.55,7.55-26.41a8,8,0,0,0-.68-6,63.95,63.95,0,1,1,25.57,25.57A7.94,7.94,0,0,0,61.53,159.23Zm154,29.44,7.55,26.41-26.41-7.55a8,8,0,0,0-6,.68,64.06,64.06,0,0,1-86.32-24.64A79.93,79.93,0,0,0,174.7,89.71a64,64,0,0,1,41.51,92.93A8,8,0,0,0,215.53,188.67Z" />
+  </g>
+    <text x="148" y="442" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">对话流转</text>
+    <text x="148" y="460" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#E8456B" letter-spacing="1">CONVERSATION LIFECYCLE</text>
+
+    <rect x="108" y="480" width="155" height="56" fill="#F5F6FA" />
+    <text x="185" y="506" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#1A73E8">1. 用户提问</text>
+    <text x="185" y="524" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">chat_input</text>
+    <text x="273" y="512" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#1A73E8">→</text>
+    <rect x="290" y="480" width="155" height="56" fill="#FFFFFF" />
+    <text x="367" y="506" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#6C3FD4">2. 加载历史</text>
+    <text x="367" y="524" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">load_memory</text>
+    <text x="455" y="512" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="18" fill="#6C3FD4">→</text>
+    <rect x="472" y="480" width="130" height="56" fill="#F5F6FA" />
+    <text x="537" y="506" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#E8456B">3. 注入 Prompt</text>
+    <text x="537" y="524" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">stream_chat</text>
+
+    <rect x="108" y="548" width="494" height="55" fill="#F5F6FA" />
+    <text x="128" y="570" font-family="Consolas, 'Courier New', monospace" font-size="12" font-weight="bold" fill="#00C853">4. save_context()</text>
+    <text x="310" y="570" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#1A1D2E">保存本轮对话 → 维持 session_state 状态</text>
+    <text x="128" y="592" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="12" fill="#6B7280">页面刷新时从 st.session_state 恢复 MemoryManager 实例</text>
+  </g>
+
+  <g id="c4"><rect x="648" y="395" width="552" height="260" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5" />
+    <rect x="648" y="395" width="4" height="260" fill="#1A73E8" />
+    
+  <g transform="translate(678.0, 422.0) scale(0.1015625)" fill="#1A73E8">
+    <path d="M207.86,123.18l16.78-21a99.14,99.14,0,0,0-10.07-24.29l-26.7-3a81,81,0,0,0-6.81-6.81l-3-26.71a99.43,99.43,0,0,0-24.3-10l-21,16.77a81.59,81.59,0,0,0-9.64,0l-21-16.78A99.14,99.14,0,0,0,77.91,41.43l-3,26.7a81,81,0,0,0-6.81,6.81l-26.71,3a99.43,99.43,0,0,0-10,24.3l16.77,21a81.59,81.59,0,0,0,0,9.64l-16.78,21a99.14,99.14,0,0,0,10.07,24.29l26.7,3a81,81,0,0,0,6.81,6.81l3,26.71a99.43,99.43,0,0,0,24.3,10l21-16.77a81.59,81.59,0,0,0,9.64,0l21,16.78a99.14,99.14,0,0,0,24.29-10.07l3-26.7a81,81,0,0,0,6.81-6.81l26.71-3a99.43,99.43,0,0,0,10-24.3l-16.77-21A81.59,81.59,0,0,0,207.86,123.18ZM128,168a40,40,0,1,1,40-40A40,40,0,0,1,128,168Z" opacity="0.2" />
+    <path d="M128,80a48,48,0,1,0,48,48A48.05,48.05,0,0,0,128,80Zm0,80a32,32,0,1,1,32-32A32,32,0,0,1,128,160Zm88-29.84q.06-2.16,0-4.32l14.92-18.64a8,8,0,0,0,1.48-7.06,107.6,107.6,0,0,0-10.88-26.25,8,8,0,0,0-6-3.93l-23.72-2.64q-1.48-1.56-3-3L186,40.54a8,8,0,0,0-3.94-6,107.29,107.29,0,0,0-26.25-10.86,8,8,0,0,0-7.06,1.48L130.16,40Q128,40,125.84,40L107.2,25.11a8,8,0,0,0-7.06-1.48A107.6,107.6,0,0,0,73.89,34.51a8,8,0,0,0-3.93,6L67.32,64.27q-1.56,1.49-3,3L40.54,70a8,8,0,0,0-6,3.94,107.71,107.71,0,0,0-10.87,26.25,8,8,0,0,0,1.49,7.06L40,125.84Q40,128,40,130.16L25.11,148.8a8,8,0,0,0-1.48,7.06,107.6,107.6,0,0,0,10.88,26.25,8,8,0,0,0,6,3.93l23.72,2.64q1.49,1.56,3,3L70,215.46a8,8,0,0,0,3.94,6,107.71,107.71,0,0,0,26.25,10.87,8,8,0,0,0,7.06-1.49L125.84,216q2.16.06,4.32,0l18.64,14.92a8,8,0,0,0,7.06,1.48,107.21,107.21,0,0,0,26.25-10.88,8,8,0,0,0,3.93-6l2.64-23.72q1.56-1.48,3-3L215.46,186a8,8,0,0,0,6-3.94,107.71,107.71,0,0,0,10.87-26.25,8,8,0,0,0-1.49-7.06Zm-16.1-6.5a73.93,73.93,0,0,1,0,8.68,8,8,0,0,0,1.74,5.48l14.19,17.73a91.57,91.57,0,0,1-6.23,15L187,173.11a8,8,0,0,0-5.1,2.64,74.11,74.11,0,0,1-6.14,6.14,8,8,0,0,0-2.64,5.1l-2.51,22.58a91.32,91.32,0,0,1-15,6.23l-17.74-14.19a8,8,0,0,0-5-1.75h-.48a73.93,73.93,0,0,1-8.68,0,8.06,8.06,0,0,0-5.48,1.74L100.45,215.8a91.57,91.57,0,0,1-15-6.23L82.89,187a8,8,0,0,0-2.64-5.1,74.11,74.11,0,0,1-6.14-6.14,8,8,0,0,0-5.1-2.64L46.43,170.6a91.32,91.32,0,0,1-6.23-15l14.19-17.74a8,8,0,0,0,1.74-5.48,73.93,73.93,0,0,1,0-8.68,8,8,0,0,0-1.74-5.48L40.2,100.45a91.57,91.57,0,0,1,6.23-15L69,82.89a8,8,0,0,0,5.1-2.64,74.11,74.11,0,0,1,6.14-6.14A8,8,0,0,0,82.89,69L85.4,46.43a91.32,91.32,0,0,1,15-6.23l17.74,14.19a8,8,0,0,0,5.48,1.74,73.93,73.93,0,0,1,8.68,0,8.06,8.06,0,0,0,5.48-1.74L155.55,40.2a91.57,91.57,0,0,1,15,6.23L173.11,69a8,8,0,0,0,2.64,5.1,74.11,74.11,0,0,1,6.14,6.14,8,8,0,0,0,5.1,2.64l22.58,2.51a91.32,91.32,0,0,1,6.23,15l-14.19,17.74A8,8,0,0,0,199.87,123.66Z" />
+  </g>
+    <text x="716" y="442" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#1A1D2E">配置参数</text>
+    <text x="716" y="460" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">CONFIGURATION</text>
+
+    <rect x="676" y="480" width="496" height="140" fill="#F5F6FA" />
+    <text x="696" y="508" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#1A73E8" font-weight="bold">MEMORY_KEEP_RECENT = 4</text>
+    <text x="696" y="530" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">保留最近 4 轮（8 条消息）</text>
+
+    <text x="696" y="556" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#6C3FD4" font-weight="bold">MEMORY_MAX_TOKEN_LIMIT = 4000</text>
+    <text x="696" y="578" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">对话历史 Token 上限控制</text>
+
+    <text x="696" y="604" font-family="Consolas, 'Courier New', monospace" font-size="13" fill="#E8456B" font-weight="bold">session_state 持久化</text>
+    <text x="696" y="626" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280">Streamlit 页面刷新后状态保持</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4" />
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">09 / 12</text>
+  </g>
+</svg>

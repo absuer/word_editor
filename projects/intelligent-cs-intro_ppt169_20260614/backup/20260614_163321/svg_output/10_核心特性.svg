@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C5CFC"/>
+    </linearGradient>
+  </defs>
+
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#0A0E27"/>
+  </g>
+
+  <g id="page-header">
+    <rect x="80" y="42" width="4" height="32" rx="2" fill="url(#accentLine)"/>
+    <text x="100" y="68" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#E8E8F0">核心特性与亮点</text>
+    <text x="100" y="90" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#A0A4B8" letter-spacing="2">KEY FEATURES — SIX CORE ADVANTAGES OF THE INTELLIGENT CS SYSTEM</text>
+  </g>
+
+  <!-- Row 1 -->
+  <!-- Card 1: Multi-format -->
+  <g id="card-formats">
+    <rect x="80" y="130" width="360" height="240" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <use data-icon="phosphor-duotone/file-doc" x="250" y="155" width="36" height="36" fill="#00D4FF"/>
+    <text x="260" y="215" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#E8E8F0">多格式支持</text>
+    <text x="260" y="238" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#00D4FF" fill-opacity="0.7" letter-spacing="1">7 FILE FORMATS</text>
+    <text x="260" y="270" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">PDF · DOCX · TXT · MD</text>
+    <text x="260" y="295" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">CSV · HTML · 图片OCR</text>
+    <text x="260" y="320" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8" fill-opacity="0.7">自动格式检测一键上传</text>
+  </g>
+
+  <!-- Card 2: Chinese Optimized -->
+  <g id="card-chinese">
+    <rect x="460" y="130" width="360" height="240" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <use data-icon="phosphor-duotone/translate" x="630" y="155" width="36" height="36" fill="#7C5CFC"/>
+    <text x="640" y="215" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#E8E8F0">中文深度优化</text>
+    <text x="640" y="238" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#7C5CFC" fill-opacity="0.7" letter-spacing="1">CHINESE-AWARE</text>
+    <text x="640" y="270" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">中文感知分块: 句号分隔</text>
+    <text x="640" y="295" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">多语言嵌入模型</text>
+    <text x="640" y="320" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8" fill-opacity="0.7">paraphrase-multilingual</text>
+  </g>
+
+  <!-- Card 3: Smart Fallback -->
+  <g id="card-fallback">
+    <rect x="840" y="130" width="360" height="240" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <use data-icon="phosphor-duotone/globe-hemisphere-east" x="1010" y="155" width="36" height="36" fill="#FF6B9D"/>
+    <text x="1020" y="215" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#E8E8F0">智能回退</text>
+    <text x="1020" y="238" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#FF6B9D" fill-opacity="0.7" letter-spacing="1">SMART FALLBACK</text>
+    <text x="1020" y="270" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">文档优先检索</text>
+    <text x="1020" y="295" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">不足时自动联网搜索</text>
+    <text x="1020" y="320" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8" fill-opacity="0.7">DuckDuckGo 双后端重试</text>
+  </g>
+
+  <!-- Row 2 -->
+  <!-- Card 4: Streaming -->
+  <g id="card-streaming">
+    <rect x="80" y="390" width="360" height="240" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <use data-icon="phosphor-duotone/lightning" x="250" y="415" width="36" height="36" fill="#00D4FF"/>
+    <text x="260" y="475" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#E8E8F0">流式响应</text>
+    <text x="260" y="498" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#00D4FF" fill-opacity="0.7" letter-spacing="1">STREAMING RESPONSE</text>
+    <text x="260" y="530" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">LangGraph values 模式</text>
+    <text x="260" y="555" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">实时逐字流式输出</text>
+    <text x="260" y="580" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8" fill-opacity="0.7">工具调用日志 + 耗时统计</text>
+  </g>
+
+  <!-- Card 5: Dedup & Persistence -->
+  <g id="card-dedup">
+    <rect x="460" y="390" width="360" height="240" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <use data-icon="phosphor-duotone/shield-check" x="630" y="415" width="36" height="36" fill="#7C5CFC"/>
+    <text x="640" y="475" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#E8E8F0">去重与持久化</text>
+    <text x="640" y="498" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#7C5CFC" fill-opacity="0.7" letter-spacing="1">DEDUP &amp; PERSISTENCE</text>
+    <text x="640" y="530" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">文件: name+size 去重</text>
+    <text x="640" y="555" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">分块: source+index 去重</text>
+    <text x="640" y="580" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8" fill-opacity="0.7">ChromaDB 持久化存储</text>
+  </g>
+
+  <!-- Card 6: Traceable -->
+  <g id="card-traceable">
+    <rect x="840" y="390" width="360" height="240" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <use data-icon="phosphor-duotone/check-circle" x="1010" y="415" width="36" height="36" fill="#FF6B9D"/>
+    <text x="1020" y="475" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="22" font-weight="bold" fill="#E8E8F0">回答可溯源</text>
+    <text x="1020" y="498" text-anchor="middle" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#FF6B9D" fill-opacity="0.7" letter-spacing="1">TRACEABLE ANSWERS</text>
+    <text x="1020" y="530" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">每回答附来源文件名</text>
+    <text x="1020" y="555" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">标注页码与检索原文</text>
+    <text x="1020" y="580" text-anchor="middle" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#A0A4B8" fill-opacity="0.7">前端展开查看检索结果</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#2A2E45" fill-opacity="0.5"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#A0A4B8" fill-opacity="0.4">10 / 12</text>
+  </g>
+</svg>

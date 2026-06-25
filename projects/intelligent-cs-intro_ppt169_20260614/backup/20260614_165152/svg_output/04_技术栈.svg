@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <g id="bg-layer"><rect x="0" y="0" width="1280" height="720" fill="#EDEFF4"/></g>
+  <g id="page-header">
+    <rect x="80" y="38" width="4" height="28" rx="2" fill="#1A73E8"/>
+    <text x="100" y="62" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#1A1D2E">技术栈一览</text>
+    <text x="100" y="82" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="13" fill="#6B7280" letter-spacing="2">TECH STACK — STREAMLIT + LANGCHAIN/LANGGRAPH + CHROMADB</text>
+  </g>
+
+  <!-- Row 1 -->
+  <g id="card-s1"><rect x="80" y="108" width="272" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="108" width="272" height="4" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/desktop" x="110" y="140" width="32" height="32" fill="#1A73E8"/>
+    <text x="115" y="200" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">Streamlit</text>
+    <text x="115" y="220" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">WEB UI FRAMEWORK</text>
+    <text x="115" y="258" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">Web 界面与会话管理</text>
+    <text x="115" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">文件上传/聊天/设置面板</text>
+    <text x="115" y="302" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">session_state 持久化</text>
+  </g>
+  <g id="card-s2"><rect x="368" y="108" width="272" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="368" y="108" width="272" height="4" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/graph" x="398" y="140" width="32" height="32" fill="#6C3FD4"/>
+    <text x="403" y="200" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">LangChain+LangGraph</text>
+    <text x="403" y="220" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">AGENT FRAMEWORK</text>
+    <text x="403" y="258" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">ReAct Agent 编排</text>
+    <text x="403" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">Tool 调用与流式输出</text>
+    <text x="403" y="302" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">create_react_agent</text>
+  </g>
+  <g id="card-s3"><rect x="656" y="108" width="272" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="656" y="108" width="272" height="4" fill="#E8456B"/>
+    <use data-icon="phosphor-duotone/database" x="686" y="140" width="32" height="32" fill="#E8456B"/>
+    <text x="691" y="200" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">ChromaDB</text>
+    <text x="691" y="220" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#E8456B" letter-spacing="1">VECTOR DATABASE</text>
+    <text x="691" y="258" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">文档嵌入存储与检索</text>
+    <text x="691" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">相似度语义匹配</text>
+    <text x="691" y="302" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">data/chroma_db/ 持久化</text>
+  </g>
+  <g id="card-s4"><rect x="944" y="108" width="256" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="944" y="108" width="256" height="4" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/cpu" x="974" y="140" width="32" height="32" fill="#1A73E8"/>
+    <text x="979" y="200" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">HuggingFace</text>
+    <text x="979" y="220" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">EMBEDDINGS</text>
+    <text x="979" y="258" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">paraphrase-multilingual</text>
+    <text x="979" y="280" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">MiniLM-L12-v2</text>
+    <text x="979" y="302" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">CPU 本地运行</text>
+  </g>
+
+  <!-- Row 2 -->
+  <g id="card-s5"><rect x="80" y="378" width="272" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="80" y="378" width="272" height="4" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/brain" x="110" y="410" width="32" height="32" fill="#6C3FD4"/>
+    <text x="115" y="470" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">DeepSeek LLM</text>
+    <text x="115" y="490" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">LARGE LANGUAGE MODEL</text>
+    <text x="115" y="528" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">deepseek-v4-pro</text>
+    <text x="115" y="550" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">OpenAI-compatible API /v1</text>
+    <text x="115" y="572" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">ChatOpenAI 协议接入</text>
+  </g>
+  <g id="card-s6"><rect x="368" y="378" width="272" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="368" y="378" width="272" height="4" fill="#1A73E8"/>
+    <use data-icon="phosphor-duotone/globe-hemisphere-east" x="398" y="410" width="32" height="32" fill="#1A73E8"/>
+    <text x="403" y="470" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">DuckDuckGo</text>
+    <text x="403" y="490" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#1A73E8" letter-spacing="1">WEB SEARCH FALLBACK</text>
+    <text x="403" y="528" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">文档外知识回退查询</text>
+    <text x="403" y="550" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">html/lite 双后端</text>
+    <text x="403" y="572" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">无需 API Key</text>
+  </g>
+  <g id="card-s7"><rect x="656" y="378" width="272" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="656" y="378" width="272" height="4" fill="#E8456B"/>
+    <use data-icon="phosphor-duotone/gear" x="686" y="410" width="32" height="32" fill="#E8456B"/>
+    <text x="691" y="470" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">配置管理</text>
+    <text x="691" y="490" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#E8456B" letter-spacing="1">CONFIGURATION</text>
+    <text x="691" y="528" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">python-dotenv 环境变量</text>
+    <text x="691" y="550" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">.env 密钥安全管理</text>
+    <text x="691" y="572" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">config.py 统一入口</text>
+  </g>
+  <g id="card-s8"><rect x="944" y="378" width="256" height="250" fill="#FFFFFF" stroke="#D8DAE4" stroke-width="0.5"/>
+    <rect x="944" y="378" width="256" height="4" fill="#6C3FD4"/>
+    <use data-icon="phosphor-duotone/check-circle" x="974" y="410" width="32" height="32" fill="#6C3FD4"/>
+    <text x="979" y="470" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#1A1D2E">pytest</text>
+    <text x="979" y="490" font-family="Consolas, 'Courier New', monospace" font-size="10" fill="#6C3FD4" letter-spacing="1">TESTING</text>
+    <text x="979" y="528" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">单元测试 + E2E 测试</text>
+    <text x="979" y="550" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">tempfile 临时目录隔离</text>
+    <text x="979" y="572" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="14" fill="#6B7280">全流程验证覆盖</text>
+  </g>
+
+  <g id="page-footer">
+    <rect x="80" y="680" width="1120" height="1" fill="#D8DAE4"/>
+    <text x="1200" y="700" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#6B7280">04 / 12</text>
+  </g>
+</svg>

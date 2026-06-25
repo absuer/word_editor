@@ -38,7 +38,7 @@ def get_editor_html(file_bytes: bytes, file_name: str, field_list: list[dict]) -
   </style>
 </head>
 <body>
-  <iframe id="vue-editor" src="./static/vue-editor/index.html"></iframe>
+  <iframe id="vue-editor" src="http://localhost:4173"></iframe>
   <script>
     const initData = {init_json};
 
@@ -47,11 +47,27 @@ def get_editor_html(file_bytes: bytes, file_name: str, field_list: list[dict]) -
       iframe.contentWindow.postMessage(initData, '*');
     }});
 
-    // Listen for download messages from the Vue editor
+    // Handle download: convert base64 to blob and trigger browser download
     window.addEventListener('message', function(event) {{
       if (event.data && event.data.type === 'download') {{
-        // Forward the download data to Streamlit
-        window.parent.postMessage(event.data, '*');
+        const byteString = atob(event.data.fileBase64);
+        const mimeType = event.data.fileName.endsWith('.xlsx')
+          ? 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+          : 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+        const ab = new ArrayBuffer(byteString.length);
+        const ia = new Uint8Array(ab);
+        for (let i = 0; i < byteString.length; i++) {{
+          ia[i] = byteString.charCodeAt(i);
+        }}
+        const blob = new Blob([ab], {{ type: mimeType }});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = event.data.fileName;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }}
     }});
   </script>

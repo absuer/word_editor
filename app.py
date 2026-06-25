@@ -69,6 +69,8 @@ if "uploaded_files" not in st.session_state:
         st.session_state.uploaded_files.append(f"{fname}_0")
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "editing_file" not in st.session_state:
+    st.session_state.editing_file = None  # (file_name, file_bytes) or None
 
 # ── Sidebar ──────────────────────────────────────────────
 with st.sidebar:
@@ -102,7 +104,19 @@ with st.sidebar:
         with st.expander(f"📚 已上传 ({len(st.session_state.uploaded_files)} 个)", expanded=True):
             for fk in st.session_state.uploaded_files:
                 fname = fk.rsplit("_", 1)[0]
-                st.markdown(f"📄 {fname}")
+                col1, col2 = st.columns([3, 1])
+                with col1:
+                    st.markdown(f"📄 {fname}")
+                with col2:
+                    ext = fname.rsplit(".", 1)[-1].lower() if "." in fname else ""
+                    if ext in ("docx", "xlsx"):
+                        if st.button(f"✏️ 编辑", key=f"edit_btn_{fk}"):
+                            from pathlib import Path
+                            from config import UPLOAD_DIR
+                            file_path = Path(UPLOAD_DIR) / fname
+                            if file_path.exists():
+                                st.session_state.editing_file = (fname, file_path.read_bytes())
+                                st.rerun()
 
     if st.session_state.uploaded_files and st.button("🗑 清空全部", type="secondary"):
         logger.info("🗑 Clearing all files and resetting session")
@@ -118,6 +132,31 @@ with st.sidebar:
 
     doc_count = st.session_state.vector_store.count()
     st.info(f"📊 已加载 {len(st.session_state.uploaded_files)} 个文件 | 向量库 {doc_count} 条记录")
+
+# ── Editor area ──────────────────────────────────────────
+if st.session_state.editing_file:
+    fname, fbytes = st.session_state.editing_file
+    st.markdown(f'### ✏️ 正在编辑: {fname}')
+
+    col1, col2 = st.columns([4, 1])
+    with col2:
+        if st.button('❌ 关闭编辑器', type='secondary'):
+            st.session_state.editing_file = None
+            st.rerun()
+
+    from modules.editor import render_editor, handle_editor_download
+    render_editor(fbytes, fname, [
+        {'id': '1', 'name': '客户名称', 'icon': '👤'},
+        {'id': '2', 'name': '合同金额', 'icon': '💰'},
+        {'id': '3', 'name': '签订日期', 'icon': '📅'},
+        {'id': '4', 'name': '产品名称', 'icon': '📦'},
+        {'id': '5', 'name': '交付地点', 'icon': '📍'},
+    ], height=650)
+    handle_editor_download()
+
+    st.divider()
+    # Also listen for postMessage from the editor
+    st.markdown('<script>window.addEventListener("message", function(e){if(e.data&&e.data.type==="download"){window.parent.postMessage(e.data,"*");}});</script>', unsafe_allow_html=True)
 
 # ── Main chat area ───────────────────────────────────────
 for msg in st.session_state.messages:

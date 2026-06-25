@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <defs>
+    <linearGradient id="accentLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00D4FF"/>
+      <stop offset="100%" stop-color="#7C5CFC"/>
+    </linearGradient>
+    <linearGradient id="cardGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#7C5CFC" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <g id="bg-layer">
+    <rect x="0" y="0" width="1280" height="720" fill="#0A0E27"/>
+  </g>
+
+  <!-- Page header -->
+  <g id="page-header">
+    <rect x="80" y="50" width="4" height="36" rx="2" fill="url(#accentLine)"/>
+    <text x="100" y="80" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="36" font-weight="bold" fill="#E8E8F0">技术栈一览</text>
+    <text x="100" y="105" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8" letter-spacing="2">TECH STACK — STREAMLIT + LANGCHAIN/LANGGRAPH + CHROMADB</text>
+  </g>
+
+  <!-- Card Row 1: 4 cards -->
+  <!-- Card 1: Streamlit -->
+  <g id="card-streamlit">
+    <rect x="80" y="145" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <rect x="80" y="145" width="265" height="250" rx="10" fill="url(#cardGrad1)"/>
+    <circle cx="130" cy="195" r="24" fill="#00D4FF" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/desktop" x="110" y="175" width="40" height="40" fill="#00D4FF"/>
+    <text x="115" y="245" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">Streamlit</text>
+    <text x="115" y="268" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#00D4FF" fill-opacity="0.7" letter-spacing="1">WEB UI FRAMEWORK</text>
+    <text x="115" y="305" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">Web 界面与会话管理</text>
+    <text x="115" y="328" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">文件上传 / 聊天 / 设置</text>
+    <text x="115" y="351" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">session_state 持久化</text>
+  </g>
+
+  <!-- Card 2: LangChain + LangGraph -->
+  <g id="card-langchain">
+    <rect x="365" y="145" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="415" cy="195" r="24" fill="#7C5CFC" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/graph" x="395" y="175" width="40" height="40" fill="#7C5CFC"/>
+    <text x="400" y="245" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">LangChain+LangGraph</text>
+    <text x="400" y="268" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7C5CFC" fill-opacity="0.7" letter-spacing="1">AGENT FRAMEWORK</text>
+    <text x="400" y="305" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">ReAct Agent 编排</text>
+    <text x="400" y="328" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">Tool 调用与流式输出</text>
+    <text x="400" y="351" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">create_react_agent</text>
+  </g>
+
+  <!-- Card 3: ChromaDB -->
+  <g id="card-chroma">
+    <rect x="650" y="145" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="700" cy="195" r="24" fill="#FF6B9D" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/database" x="680" y="175" width="40" height="40" fill="#FF6B9D"/>
+    <text x="685" y="245" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">ChromaDB</text>
+    <text x="685" y="268" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#FF6B9D" fill-opacity="0.7" letter-spacing="1">VECTOR DATABASE</text>
+    <text x="685" y="305" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">文档嵌入存储</text>
+    <text x="685" y="328" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">相似度语义检索</text>
+    <text x="685" y="351" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">持久化 data/chroma_db/</text>
+  </g>
+
+  <!-- Card 4: HuggingFace Embeddings -->
+  <g id="card-hf">
+    <rect x="935" y="145" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="985" cy="195" r="24" fill="#00D4FF" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/cpu" x="965" y="175" width="40" height="40" fill="#00D4FF"/>
+    <text x="970" y="245" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">HuggingFace Embed</text>
+    <text x="970" y="268" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#00D4FF" fill-opacity="0.7" letter-spacing="1">EMBEDDING MODEL</text>
+    <text x="970" y="305" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">paraphrase-multilingual</text>
+    <text x="970" y="328" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">MiniLM-L12-v2</text>
+    <text x="970" y="351" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">CPU 本地运行</text>
+  </g>
+
+  <!-- Card Row 2: 4 cards -->
+  <!-- Card 5: DeepSeek LLM -->
+  <g id="card-deepseek">
+    <rect x="80" y="415" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="130" cy="465" r="24" fill="#7C5CFC" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/brain" x="110" y="445" width="40" height="40" fill="#7C5CFC"/>
+    <text x="115" y="515" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">DeepSeek LLM</text>
+    <text x="115" y="538" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7C5CFC" fill-opacity="0.7" letter-spacing="1">LARGE LANGUAGE MODEL</text>
+    <text x="115" y="575" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">deepseek-v4-pro</text>
+    <text x="115" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">OpenAI-compatible /v1</text>
+    <text x="115" y="621" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">ChatOpenAI 接入</text>
+  </g>
+
+  <!-- Card 6: DuckDuckGo -->
+  <g id="card-ddg">
+    <rect x="365" y="415" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="415" cy="465" r="24" fill="#00D4FF" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/globe-hemisphere-east" x="395" y="445" width="40" height="40" fill="#00D4FF"/>
+    <text x="400" y="515" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">DuckDuckGo</text>
+    <text x="400" y="538" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#00D4FF" fill-opacity="0.7" letter-spacing="1">WEB SEARCH FALLBACK</text>
+    <text x="400" y="575" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">文档外知识回退查询</text>
+    <text x="400" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">html/lite 双后端</text>
+    <text x="400" y="621" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">无需 API Key</text>
+  </g>
+
+  <!-- Card 7: python-dotenv -->
+  <g id="card-dotenv">
+    <rect x="650" y="415" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="700" cy="465" r="24" fill="#FF6B9D" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/gear" x="680" y="445" width="40" height="40" fill="#FF6B9D"/>
+    <text x="685" y="515" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">配置管理</text>
+    <text x="685" y="538" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#FF6B9D" fill-opacity="0.7" letter-spacing="1">CONFIGURATION</text>
+    <text x="685" y="575" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">python-dotenv 环境变量</text>
+    <text x="685" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">.env 密钥安全管理</text>
+    <text x="685" y="621" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">config.py 统一配置</text>
+  </g>
+
+  <!-- Card 8: pytest -->
+  <g id="card-pytest">
+    <rect x="935" y="415" width="265" height="250" rx="10" fill="#131837" stroke="#2A2E45" stroke-width="1"/>
+    <circle cx="985" cy="465" r="24" fill="#7C5CFC" fill-opacity="0.1"/>
+    <use data-icon="phosphor-duotone/check-circle" x="965" y="445" width="40" height="40" fill="#7C5CFC"/>
+    <text x="970" y="515" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="20" font-weight="bold" fill="#E8E8F0">pytest</text>
+    <text x="970" y="538" font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7C5CFC" fill-opacity="0.7" letter-spacing="1">TESTING FRAMEWORK</text>
+    <text x="970" y="575" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">单元测试 + 端到端测试</text>
+    <text x="970" y="598" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">tempfile 临时目录隔离</text>
+    <text x="970" y="621" font-family="'Microsoft YaHei', 'PingFang SC', Arial, sans-serif" font-size="15" fill="#A0A4B8">全流程验证覆盖</text>
+  </g>
+
+  <!-- Footer -->
+  <g id="page-footer">
+    <rect x="80" y="683" width="1120" height="1" fill="#2A2E45" fill-opacity="0.5"/>
+    <text x="1200" y="703" text-anchor="end" font-family="Consolas, 'Courier New', monospace" font-size="12" fill="#A0A4B8" fill-opacity="0.4">04 / 12</text>
+  </g>
+</svg>
