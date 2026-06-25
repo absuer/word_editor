@@ -1,0 +1,278 @@
+"""Intelligent Customer Service System - Streamlit App."""
+import logging
+import sys
+import time
+from datetime import datetime
+import streamlit as st
+from modules.file_loader import FileLoader
+from modules.vector_store import VectorStoreManager
+from modules.agent import AgentManager
+from modules.memory import MemoryManager
+from config import DEFAULT_TOP_K, LLM_MODEL
+
+# ── Logging setup ──────────────────────────────────────────
+LOG_FILE = "data/app.log"
+
+
+class _SafeStreamHandler(logging.StreamHandler):
+    """StreamHandler that tolerates encoding errors on Windows GBK consoles."""
+
+    def emit(self, record):
+        try:
+            super().emit(record)
+        except (ValueError, OSError):
+            pass  # Streamlit reload closed the stream, ignore
+
+
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(name)s - %(message)s",
+    handlers=[
+        logging.FileHandler(LOG_FILE, encoding="utf-8"),
+        _SafeStreamHandler(sys.stdout),
+    ],
+)
+logger = logging.getLogger("intelligent-cs")
+
+# ── Page config ──────────────────────────────────────────
+st.set_page_config(
+    page_title="智能客服系统",
+    page_icon="🤖",
+    layout="wide",
+    initial_sidebar_state="expanded",
+)
+
+st.title("🤖 智能客服系统")
+
+# ── Session state initialization ─────────────────────────
+if "file_loader" not in st.session_state:
+    logger.info("=" * 50)
+    logger.info("🚀 Session started - initializing modules")
+    st.session_state.file_loader = FileLoader()
+if "vector_store" not in st.session_state:
+    t0 = time.time()
+    st.session_state.vector_store = VectorStoreManager()
+    logger.info(f"VectorStoreManager initialized in {time.time()-t0:.1f}s")
+if "agent" not in st.session_state:
+    t0 = time.time()
+    st.session_state.agent = AgentManager(st.session_state.vector_store)
+    logger.info(f"AgentManager initialized in {time.time()-t0:.1f}s")
+if "memory" not in st.session_state:
+    st.session_state.memory = MemoryManager()
+    logger.info("MemoryManager initialized")
+if "uploaded_files" not in st.session_state:
+    st.session_state.uploaded_files = []
+    # Restore file list from persisted vector store (survives page refresh)
+    existing = getattr(st.session_state.vector_store, "get_source_files", lambda: [])()
+    for fname in existing:
+        # Reconstruct a fake key — actual content is already in vector store
+        st.session_state.uploaded_files.append(f"{fname}_0")
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# ── Sidebar ──────────────────────────────────────────────
+with st.sidebar:
+    st.header("📁 文件上传")
+
+    uploaded_files = st.file_uploader(
+        "拖拽或点击上传文件",
+        accept_multiple_files=True,
+        type=["pdf", "docx", "txt", "md", "csv", "html", "htm", "png", "jpg", "jpeg"],
+        key="file_uploader",
+        help="支持 PDF、Word、TXT、Markdown、CSV、HTML、图片",
+    )
+
+    if uploaded_files:
+        for f in uploaded_files:
+            file_key = f"{f.name}_{f.size}"
+            if file_key not in st.session_state.uploaded_files:
+                logger.info(f"📤 New file: {f.name} ({f.size} bytes, type={f.type})")
+                with st.spinner(f"处理中: {f.name}..."):
+                    t0 = time.time()
+                    file_path = st.session_state.file_loader.save_upload(f)
+                    docs = st.session_state.file_loader.load_file(file_path)
+                    st.session_state.vector_store.add_documents(docs)
+                    st.session_state.uploaded_files.append(file_key)
+                    elapsed = time.time() - t0
+                    logger.info(f"✅ {f.name} → {len(docs)} chunks, {elapsed:.1f}s, "
+                                f"total docs in store: {st.session_state.vector_store.count()}")
+                st.toast(f"✅ {f.name} 已处理", icon="✅")
+
+    if st.session_state.uploaded_files:
+        with st.expander(f"📚 已上传 ({len(st.session_state.uploaded_files)} 个)", expanded=True):
+            for fk in st.session_state.uploaded_files:
+                fname = fk.rsplit("_", 1)[0]
+                st.markdown(f"📄 {fname}")
+
+    if st.session_state.uploaded_files and st.button("🗑 清空全部", type="secondary"):
+        logger.info("🗑 Clearing all files and resetting session")
+        st.session_state.vector_store.clear()
+        st.session_state.uploaded_files = []
+        st.session_state.messages = []
+        st.session_state.memory = MemoryManager()
+        st.rerun()
+
+    with st.expander("⚙️ 设置"):
+        top_k = st.slider("检索数量", 1, 10, DEFAULT_TOP_K)
+        st.caption(f"模型: {LLM_MODEL}")
+
+    doc_count = st.session_state.vector_store.count()
+    st.info(f"📊 已加载 {len(st.session_state.uploaded_files)} 个文件 | 向量库 {doc_count} 条记录")
+
+# ── Main chat area ───────────────────────────────────────
+for msg in st.session_state.messages:
+    with st.chat_message(msg["role"]):
+        st.markdown(msg["content"])
+
+if prompt := st.chat_input("💬 输入你的问题..."):
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    with st.chat_message("user"):
+        st.markdown(prompt)
+
+    with st.chat_message("assistant"):
+        logger.info(f"👤 User asked: {prompt[:100]}...")
+        t_start = time.time()
+
+        with st.spinner("思考中..."):
+            try:
+                mem_vars = st.session_state.memory.load_memory_variables({})
+                chat_history = mem_vars.get("history", [])
+                logger.info(f"📝 Chat history: {len(chat_history)} messages")
+
+                response_container = st.empty()
+                full_response = ""
+                chunk_count = 0
+                for chunk in st.session_state.agent.stream_chat(prompt, chat_history):
+                    full_response = chunk
+                    chunk_count += 1
+                    response_container.markdown(full_response)
+
+                elapsed = time.time() - t_start
+                logger.info(f"🤖 Response: {len(full_response)} chars, "
+                            f"{chunk_count} streaming chunks, {elapsed:.1f}s total")
+
+                # Show retrieved source documents below the response
+                retrieved = getattr(st.session_state.agent, "last_retrieved_docs", [])
+                if retrieved:
+                    with st.expander("📄 检索到的原文内容", expanded=False):
+                        for i, doc in enumerate(retrieved, 1):
+                            src = doc.metadata.get("source", "unknown")
+                            page = doc.metadata.get("page", "")
+                            page_label = f" — 第{page}页" if page else ""
+                            st.caption(f"来源 {i}: {src}{page_label}")
+                            st.text(doc.page_content[:1000])
+                            if i < len(retrieved):
+                                st.divider()
+
+                st.session_state.memory.save_context(
+                    {"input": prompt},
+                    {"output": full_response},
+                )
+                logger.info(f"💾 Saved to memory (total turns: {len(st.session_state.memory.chat_memory.messages)//2})")
+
+                st.session_state.messages.append({"role": "assistant", "content": full_response})
+
+            except Exception as e:
+                elapsed = time.time() - t_start
+                logger.error(f"❌ Error after {elapsed:.1f}s: {type(e).__name__}: {e}", exc_info=True)
+                error_msg = f"⚠️ 出错了: {str(e)}"
+                st.error(error_msg)
+                st.session_state.messages.append({"role": "assistant", "content": error_msg})
+
+# ═══════════════════════════════════════════════════════════════
+# Vue Word Editor Integration
+# ═══════════════════════════════════════════════════════════════
+
+import base64
+import json
+import streamlit.components.v1 as components
+
+
+def get_editor_html(file_bytes: bytes, file_name: str, field_list: list[dict]) -> str:
+    """Generate the HTML wrapper that embeds the Vue editor iframe.
+
+    Args:
+        file_bytes: Raw bytes of the uploaded .docx/.xlsx file.
+        file_name: Original filename (used for format detection).
+        field_list: List of fields, e.g. [{"id": "1", "name": "客户名称", "icon": "👤"}, ...].
+
+    Returns:
+        HTML string ready for st.components.v1.html().
+    """
+    file_base64 = base64.b64encode(file_bytes).decode("utf-8")
+
+    init_message = {
+        "type": "init",
+        "fileBase64": file_base64,
+        "fileName": file_name,
+        "fieldList": field_list,
+    }
+    init_json = json.dumps(init_message, ensure_ascii=False)
+
+    return f"""<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+    html, body {{ height: 100%; width: 100%; overflow: hidden; }}
+    iframe {{ border: none; width: 100%; height: 100%; }}
+  </style>
+</head>
+<body>
+  <iframe id="vue-editor" src="./static/vue-editor/index.html"></iframe>
+  <script>
+    const initData = {init_json};
+
+    var iframe = document.getElementById('vue-editor');
+    iframe.addEventListener('load', function() {{
+      iframe.contentWindow.postMessage(initData, '*');
+    }});
+
+    // Listen for download messages from the Vue editor
+    window.addEventListener('message', function(event) {{
+      if (event.data && event.data.type === 'download') {{
+        // Forward the download data to Streamlit
+        window.parent.postMessage(event.data, '*');
+      }}
+    }});
+  </script>
+</body>
+</html>"""
+
+
+def render_editor(file_bytes: bytes, file_name: str, field_list: list[dict], height: int = 700) -> None:
+    """Render the Vue Word/Excel editor inside Streamlit.
+
+    Args:
+        file_bytes: Raw bytes of the uploaded file.
+        file_name: Original filename.
+        field_list: Fields for the right-side panel.
+        height: iframe height in pixels.
+    """
+    editor_html = get_editor_html(file_bytes, file_name, field_list)
+    components.html(editor_html, height=height, scrolling=False)
+
+
+def handle_editor_download(key_suffix: str = "editor") -> None:
+    """Check for editor download data posted from the iframe and show a download button.
+
+    Uses st.session_state to persist the download data across reruns.
+    Call this in the main Streamlit loop after render_editor().
+
+    Args:
+        key_suffix: Unique suffix for the session_state key.
+    """
+    state_key = f"editor_download_{key_suffix}"
+    if state_key in st.session_state and st.session_state[state_key]:
+        data = st.session_state[state_key]
+        st.download_button(
+            label=f"📥 下载 {data['fileName']}",
+            data=base64.b64decode(data['fileBase64']),
+            file_name=data['fileName'],
+            mime="application/octet-stream",
+            key=f"download_btn_{key_suffix}",
+        )
+        # Clear after showing
+        st.session_state[state_key] = None
