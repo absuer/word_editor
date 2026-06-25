@@ -1,0 +1,59 @@
+version: '3.8'
+
+services:
+  onlyoffice-documentserver:
+    image: onlyoffice/documentserver:latest
+    container_name: onlyoffice-documentserver
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+      # - "443:443"  # HTTPS (配合反向代理)
+    environment:
+      # --- JWT 认证（生产环境强烈建议开启）---
+      # JWT_ENABLED: "true"
+      # JWT_SECRET: "${ONLYOFFICE_JWT_SECRET}"
+      # JWT_HEADER: "Authorization"
+      # JWT_IN_BODY: "false"
+
+      # --- 数据库（使用内置 PostgreSQL）---
+      DB_TYPE: postgres
+      DB_HOST: localhost
+      DB_PORT: 5432
+      DB_NAME: onlyoffice
+      DB_USER: onlyoffice
+      DB_PWD: onlyoffice
+
+      # --- 消息队列 / 缓存（内置）---
+      REDIS_SERVER_HOST: localhost
+      RABBITMQ_SERVER_HOST: localhost
+
+    volumes:
+      - onlyoffice-logs:/var/log/onlyoffice
+      - onlyoffice-data:/var/www/onlyoffice/Data
+      - onlyoffice-lib:/var/lib/onlyoffice
+      - onlyoffice-db:/var/lib/postgresql
+      # 中文字体挂载（先在宿主机准备好字体文件）
+      # - /opt/onlyoffice/fonts:/usr/share/fonts/truetype/custom
+
+    # 资源限制（Document Server 最低要求 2GB，推荐 4GB）
+    deploy:
+      resources:
+        limits:
+          memory: 4G
+          cpus: '2'
+        reservations:
+          memory: 1G
+          cpus: '0.5'
+
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/welcome/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+
+volumes:
+  onlyoffice-logs:
+  onlyoffice-data:
+  onlyoffice-lib:
+  onlyoffice-db:

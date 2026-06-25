@@ -77,7 +77,9 @@ export function useOnlyOffice() {
 
       const script = document.createElement('script')
       script.id = scriptId
-      script.src = 'http://localhost:8080/web-apps/apps/api/documents/api.js'
+      script.src =
+	        import.meta.env.VITE_ONLYOFFICE_API_URL ||
+	        'http://localhost:8080/web-apps/apps/api/documents/api.js'
       script.onload = () => resolve()
       script.onerror = () => reject(new Error('Failed to load OnlyOffice API script'))
       document.head.appendChild(script)
